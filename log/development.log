@@ -12,3 +12,12 @@ Completed 200 OK in 35ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cache
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Camaar'*/[0m
   [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-06-21 15:53:57.486589', '2025-06-21 15:53:57.486592') RETURNING "key" /*application='Camaar'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-06-21 13:55:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/pedro/.rvm/gems/ruby-3.4.4/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pedro/.rvm/gems/ruby-3.4.4/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.3ms | GC: 1.7ms)
+Completed 200 OK in 34ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 10.4ms)
+
+
