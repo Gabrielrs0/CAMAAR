@@ -126,6 +126,10 @@ GEM
       cucumber (>= 5, < 10)
       railties (>= 5.2, < 9)
     cucumber-tag-expressions (6.1.2)
+    database_cleaner-active_record (2.2.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.4.1)
     debug (1.11.0)
       irb (~> 1.10)
@@ -393,7 +397,6 @@ PLATFORMS
   aarch64-linux-musl
   arm-linux-gnu
   arm-linux-musl
-  x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
 
@@ -402,6 +405,7 @@ DEPENDENCIES
   brakeman
   capybara
   cucumber-rails
+  database_cleaner-active_record
   debug
   importmap-rails
   jbuilder
@@ -418,8 +422,7 @@ DEPENDENCIES
   stimulus-rails
   thruster
   turbo-rails
-  tzinfo-data
   web-console
 
 BUNDLED WITH
-   2.6.7
+   2.6.9
