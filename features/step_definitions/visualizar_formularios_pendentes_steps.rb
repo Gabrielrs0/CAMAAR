@@ -37,7 +37,7 @@ end
 
 Given("todas as minhas turmas já foram avaliadas") do
   @turma = Turma.create!(nome: "Turma Avaliada")
-  @formulario = Formulario.create!(titulo: "Formulário Concluído", turma: @turma, respondido_por: [@usuario])
+  @formulario = Formulario.create!(titulo: "Formulário Concluído", turma: @turma, respondido_por: [ @usuario ])
 end
 
 Then("devo ver a mensagem {string}") do |mensagem|
@@ -49,7 +49,7 @@ Given("ocorreu um erro na comunicação com o servidor") do
 end
 
 Given("o formulário já foi respondido") do
-  @formulario = Formulario.create!(titulo: "Avaliação Respondida", respondido_por: [@usuario])
+  @formulario = Formulario.create!(titulo: "Avaliação Respondida", respondido_por: [ @usuario ])
 end
 
 When("eu acessar a URL do formulário manualmente") do
