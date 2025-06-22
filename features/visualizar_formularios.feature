@@ -18,4 +18,3 @@ Cenário:  Nenhum formulário criado (Sad Path)
   Quando clico em "Resultados" na tela de gerenciamento
   Então devo ver a mensagem "Nenhum formulário disponível"
   E não devo ver nenhum cartão de formulário na tela
-  
