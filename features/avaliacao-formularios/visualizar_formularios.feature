@@ -3,7 +3,7 @@
 Funcionalidade: Visualizar formulários criados
   Eu como Administrador
   Quero visualizar os formulários criados
-  A fim de poder gerar um relatório a partir das respostas
+  fim de poder gerar um relatório a partir das respostas
 
 Cenário: Visualizar formulários no gerenciamento (Happy Path)
   Dado que estou logado como administrador

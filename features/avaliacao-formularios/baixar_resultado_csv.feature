@@ -3,7 +3,7 @@
 Funcionalidade: Gerar relatório de resultados
   Eu como Administrador
   Quero baixar um arquivo csv contendo os resultados de um formulário
-  A fim de avaliar o desempenho das turmas
+  fim de avaliar o desempenho das turmas
 
 Cenário: Caminho feliz - Exportar CSV com sucesso
   Dado que estou logado como administrador
