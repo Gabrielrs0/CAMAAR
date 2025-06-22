@@ -1,4 +1,6 @@
-Feature: Criar formulário a partir de template
+# language: pt
+
+Funcionalidade: Criar formulário a partir de template
 
   Cenário: Caminho feliz - Criar formulário com sucesso
     Dado que estou logado como administrador

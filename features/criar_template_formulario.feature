@@ -1,4 +1,6 @@
-Feature: Criar template de formulário
+# language: pt
+
+Funcionalidade: Criar template de formulário
 
   Como administrador
   Quero criar um template de formulário com perguntas

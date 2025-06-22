@@ -1,4 +1,6 @@
-Feature: Editar ou deletar template
+# language: pt
+
+Funcionalidade: Editar ou deletar template
 
   Cenário: Caminho feliz - Editar template com sucesso
     Dado que estou logado como administrador

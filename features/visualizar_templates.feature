@@ -1,4 +1,6 @@
-Feature: Visualizar templates
+# language: pt
+
+Funcionalidade: Visualizar templates
 
   Cenário: Caminho feliz - Ver lista de templates
     Dado que estou logado como administrador

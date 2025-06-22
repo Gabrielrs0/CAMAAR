@@ -1,4 +1,7 @@
-Feature: Criar formulário para docentes ou discentes
+
+# language: pt
+
+Funcionalidade: Criar formulário para docentes ou discentes
 
   Cenário: Caminho feliz - Criar formulário para docentes
     Dado que estou logado como administrador
