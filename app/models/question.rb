@@ -1,0 +1,12 @@
+class Question < ApplicationRecord
+  belongs_to :template
+  has_many :answers, dependent: :destroy
+
+  enum :question_type, {
+    text: 0,
+    alternative: 1
+  }
+
+  # Garante que a Pergunta tenha conteúdo não nulo
+  validates :content, presence: true
+end

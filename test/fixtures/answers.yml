@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  answer_text: MyText
+  answer_alternative: 1
+  form: one
+  user: one
+  question: one
+
+two:
+  answer_text: MyText
+  answer_alternative: 1
+  form: two
+  user: two
+  question: two
