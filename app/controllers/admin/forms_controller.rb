@@ -1,6 +1,6 @@
 class Admin::FormsController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_form, only: [:show, :report]
+  before_action :set_form, only: [ :show, :report ]
 
   # GET /admin/forms
   def index
@@ -36,7 +36,7 @@ class Admin::FormsController < ApplicationController
 
   def generate_csv(answers)
     CSV.generate(headers: true) do |csv|
-      csv << ["Usuário", "Email", "Pergunta", "Resposta", "Data"]
+      csv << [ "Usuário", "Email", "Pergunta", "Resposta", "Data" ]
 
       answers.each do |answer|
         csv << [

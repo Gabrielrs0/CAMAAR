@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :forms, only: [:index, :show] do
+    resources :forms, only: [ :index, :show ] do
       member do
         get :report
       end
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # Este bloco estava faltando. Ele cria a rota de login para testes.
   if Rails.env.test?
     namespace :test do
-      get 'login/:admin_id', to: 'sessions#create', as: 'test_login'
+      get "login/:admin_id", to: "sessions#create", as: "test_login"
     end
   end
   # ===============================================================

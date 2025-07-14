@@ -11620,3 +11620,396 @@ Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms (2 queries, 0 cached
   [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'courses';[0m
   [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
   [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:04:05.292175', '2025-07-14 05:04:05.292175'), (298486374, 'MyString', 'MyString', '2025-07-14 05:04:05.292175', '2025-07-14 05:04:05.292175');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:04:05.293695', '2025-07-14 05:04:05.293695'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:04:05.293695', '2025-07-14 05:04:05.293695');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:04:05.295610', '2025-07-14 05:04:05.295610'), (298486374, 'MyString', 'MyString', '2025-07-14 05:04:05.295610', '2025-07-14 05:04:05.295610');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:04:05.296230', '2025-07-14 05:04:05.296230'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:04:05.296230', '2025-07-14 05:04:05.296230');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:04:05.297414', '2025-07-14 05:04:05.297414'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:04:05.297414', '2025-07-14 05:04:05.297414');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:04:05.297888', '2025-07-14 05:04:05.297888'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:04:05.297888', '2025-07-14 05:04:05.297888');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:04:05.298515', '2025-07-14 05:04:05.298515'), (298486374, 'MyString', '2025-07-14 05:04:05.298515', '2025-07-14 05:04:05.298515');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:04:05.298919', '2025-07-14 05:04:05.298919'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:04:05.298919', '2025-07-14 05:04:05.298919');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:04:05.299640', '2025-07-14 05:04:05.299640'), (298486374, 298486374, 298486374, '2025-07-14 05:04:05.299640', '2025-07-14 05:04:05.299640');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:04:05.300614', '2025-07-14 05:04:05.300614', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:04:05.300614', '2025-07-14 05:04:05.300614', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:04:30.046319', '2025-07-14 05:04:30.046319'), (298486374, 'MyString', 'MyString', '2025-07-14 05:04:30.046319', '2025-07-14 05:04:30.046319');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:04:30.047578', '2025-07-14 05:04:30.047578'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:04:30.047578', '2025-07-14 05:04:30.047578');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:04:30.049127', '2025-07-14 05:04:30.049127'), (298486374, 'MyString', 'MyString', '2025-07-14 05:04:30.049127', '2025-07-14 05:04:30.049127');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:04:30.049878', '2025-07-14 05:04:30.049878'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:04:30.049878', '2025-07-14 05:04:30.049878');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:04:30.051613', '2025-07-14 05:04:30.051613'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:04:30.051613', '2025-07-14 05:04:30.051613');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:04:30.052309', '2025-07-14 05:04:30.052309'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:04:30.052309', '2025-07-14 05:04:30.052309');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:04:30.053066', '2025-07-14 05:04:30.053066'), (298486374, 'MyString', '2025-07-14 05:04:30.053066', '2025-07-14 05:04:30.053066');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:04:30.053622', '2025-07-14 05:04:30.053622'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:04:30.053622', '2025-07-14 05:04:30.053622');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:04:30.054809', '2025-07-14 05:04:30.054809'), (298486374, 298486374, 298486374, '2025-07-14 05:04:30.054809', '2025-07-14 05:04:30.054809');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:04:30.055849', '2025-07-14 05:04:30.055849', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:04:30.055849', '2025-07-14 05:04:30.055849', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:04:38.671445', '2025-07-14 05:04:38.671445'), (298486374, 'MyString', 'MyString', '2025-07-14 05:04:38.671445', '2025-07-14 05:04:38.671445');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:04:38.673500', '2025-07-14 05:04:38.673500'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:04:38.673500', '2025-07-14 05:04:38.673500');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:04:38.676454', '2025-07-14 05:04:38.676454'), (298486374, 'MyString', 'MyString', '2025-07-14 05:04:38.676454', '2025-07-14 05:04:38.676454');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:04:38.677390', '2025-07-14 05:04:38.677390'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:04:38.677390', '2025-07-14 05:04:38.677390');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:04:38.679072', '2025-07-14 05:04:38.679072'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:04:38.679072', '2025-07-14 05:04:38.679072');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:04:38.680070', '2025-07-14 05:04:38.680070'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:04:38.680070', '2025-07-14 05:04:38.680070');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:04:38.680640', '2025-07-14 05:04:38.680640'), (298486374, 'MyString', '2025-07-14 05:04:38.680640', '2025-07-14 05:04:38.680640');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:04:38.681006', '2025-07-14 05:04:38.681006'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:04:38.681006', '2025-07-14 05:04:38.681006');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:04:38.681779', '2025-07-14 05:04:38.681779'), (298486374, 298486374, 298486374, '2025-07-14 05:04:38.681779', '2025-07-14 05:04:38.681779');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:04:38.682595', '2025-07-14 05:04:38.682595', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:04:38.682595', '2025-07-14 05:04:38.682595', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:07:26.768494', '2025-07-14 05:07:26.768494'), (298486374, 'MyString', 'MyString', '2025-07-14 05:07:26.768494', '2025-07-14 05:07:26.768494');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:07:26.770095', '2025-07-14 05:07:26.770095'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:07:26.770095', '2025-07-14 05:07:26.770095');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:07:26.772361', '2025-07-14 05:07:26.772361'), (298486374, 'MyString', 'MyString', '2025-07-14 05:07:26.772361', '2025-07-14 05:07:26.772361');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:07:26.773102', '2025-07-14 05:07:26.773102'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:07:26.773102', '2025-07-14 05:07:26.773102');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:07:26.774413', '2025-07-14 05:07:26.774413'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:07:26.774413', '2025-07-14 05:07:26.774413');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:07:26.774990', '2025-07-14 05:07:26.774990'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:07:26.774990', '2025-07-14 05:07:26.774990');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:07:26.775605', '2025-07-14 05:07:26.775605'), (298486374, 'MyString', '2025-07-14 05:07:26.775605', '2025-07-14 05:07:26.775605');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:07:26.776048', '2025-07-14 05:07:26.776048'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:07:26.776048', '2025-07-14 05:07:26.776048');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:07:26.776930', '2025-07-14 05:07:26.776930'), (298486374, 298486374, 298486374, '2025-07-14 05:07:26.776930', '2025-07-14 05:07:26.776930');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:07:26.777798', '2025-07-14 05:07:26.777798', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:07:26.777798', '2025-07-14 05:07:26.777798', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+Started GET "/admin/forms" for 127.0.0.1 at 2025-07-14 02:07:26 -0300
+Processing by Admin::FormsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2025-07-14 02:07:26 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:09:12.031134', '2025-07-14 05:09:12.031134'), (298486374, 'MyString', 'MyString', '2025-07-14 05:09:12.031134', '2025-07-14 05:09:12.031134');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:09:12.032746', '2025-07-14 05:09:12.032746'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:09:12.032746', '2025-07-14 05:09:12.032746');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:09:12.034890', '2025-07-14 05:09:12.034890'), (298486374, 'MyString', 'MyString', '2025-07-14 05:09:12.034890', '2025-07-14 05:09:12.034890');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:09:12.035445', '2025-07-14 05:09:12.035445'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:09:12.035445', '2025-07-14 05:09:12.035445');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:09:12.036425', '2025-07-14 05:09:12.036425'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:09:12.036425', '2025-07-14 05:09:12.036425');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:09:12.036921', '2025-07-14 05:09:12.036921'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:09:12.036921', '2025-07-14 05:09:12.036921');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:09:12.037529', '2025-07-14 05:09:12.037529'), (298486374, 'MyString', '2025-07-14 05:09:12.037529', '2025-07-14 05:09:12.037529');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:09:12.037902', '2025-07-14 05:09:12.037902'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:09:12.037902', '2025-07-14 05:09:12.037902');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:09:12.038596', '2025-07-14 05:09:12.038596'), (298486374, 298486374, 298486374, '2025-07-14 05:09:12.038596', '2025-07-14 05:09:12.038596');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:09:12.039204', '2025-07-14 05:09:12.039204', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:09:12.039204', '2025-07-14 05:09:12.039204', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2025-07-14 02:09:12 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+Started GET "/admin/forms" for 127.0.0.1 at 2025-07-14 02:09:12 -0300
+Processing by Admin::FormsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:09:25.428572', '2025-07-14 05:09:25.428572'), (298486374, 'MyString', 'MyString', '2025-07-14 05:09:25.428572', '2025-07-14 05:09:25.428572');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:09:25.430980', '2025-07-14 05:09:25.430980'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:09:25.430980', '2025-07-14 05:09:25.430980');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:09:25.433715', '2025-07-14 05:09:25.433715'), (298486374, 'MyString', 'MyString', '2025-07-14 05:09:25.433715', '2025-07-14 05:09:25.433715');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:09:25.434314', '2025-07-14 05:09:25.434314'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:09:25.434314', '2025-07-14 05:09:25.434314');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:09:25.435684', '2025-07-14 05:09:25.435684'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:09:25.435684', '2025-07-14 05:09:25.435684');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:09:25.436241', '2025-07-14 05:09:25.436241'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:09:25.436241', '2025-07-14 05:09:25.436241');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:09:25.436761', '2025-07-14 05:09:25.436761'), (298486374, 'MyString', '2025-07-14 05:09:25.436761', '2025-07-14 05:09:25.436761');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:09:25.437070', '2025-07-14 05:09:25.437070'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:09:25.437070', '2025-07-14 05:09:25.437070');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:09:25.437718', '2025-07-14 05:09:25.437718'), (298486374, 298486374, 298486374, '2025-07-14 05:09:25.437718', '2025-07-14 05:09:25.437718');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:09:25.438328', '2025-07-14 05:09:25.438328', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:09:25.438328', '2025-07-14 05:09:25.438328', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+Started GET "/admin/forms" for 127.0.0.1 at 2025-07-14 02:09:25 -0300
+Processing by Admin::FormsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2025-07-14 02:09:25 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:09:47.411176', '2025-07-14 05:09:47.411176'), (298486374, 'MyString', 'MyString', '2025-07-14 05:09:47.411176', '2025-07-14 05:09:47.411176');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:09:47.412938', '2025-07-14 05:09:47.412938'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:09:47.412938', '2025-07-14 05:09:47.412938');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:09:47.414978', '2025-07-14 05:09:47.414978'), (298486374, 'MyString', 'MyString', '2025-07-14 05:09:47.414978', '2025-07-14 05:09:47.414978');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:09:47.415727', '2025-07-14 05:09:47.415727'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:09:47.415727', '2025-07-14 05:09:47.415727');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:09:47.417090', '2025-07-14 05:09:47.417090'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:09:47.417090', '2025-07-14 05:09:47.417090');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:09:47.417523', '2025-07-14 05:09:47.417523'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:09:47.417523', '2025-07-14 05:09:47.417523');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:09:47.417960', '2025-07-14 05:09:47.417960'), (298486374, 'MyString', '2025-07-14 05:09:47.417960', '2025-07-14 05:09:47.417960');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:09:47.418291', '2025-07-14 05:09:47.418291'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:09:47.418291', '2025-07-14 05:09:47.418291');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:09:47.418952', '2025-07-14 05:09:47.418952'), (298486374, 298486374, 298486374, '2025-07-14 05:09:47.418952', '2025-07-14 05:09:47.418952');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:09:47.419555', '2025-07-14 05:09:47.419555', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:09:47.419555', '2025-07-14 05:09:47.419555', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2025-07-14 02:09:47 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+Started GET "/admin/forms" for 127.0.0.1 at 2025-07-14 02:09:47 -0300
+Processing by Admin::FormsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "admins";
+DELETE FROM "answers";
+DELETE FROM "courses";
+DELETE FROM "forms";
+DELETE FROM "questions";
+DELETE FROM "subjects";
+DELETE FROM "templates";
+DELETE FROM "user_forms";
+DELETE FROM "user_subjects";
+DELETE FROM "users";
+INSERT INTO "admins" ("id", "username", "hash_password", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:10:58.597667', '2025-07-14 05:10:58.597667'), (298486374, 'MyString', 'MyString', '2025-07-14 05:10:58.597667', '2025-07-14 05:10:58.597667');
+INSERT INTO "answers" ("id", "answer_text", "answer_alternative", "form_id", "user_id", "question_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, 980190962, 980190962, '2025-07-14 05:10:58.599918', '2025-07-14 05:10:58.599918'), (298486374, 'MyText', 1, 298486374, 298486374, 298486374, '2025-07-14 05:10:58.599918', '2025-07-14 05:10:58.599918');
+INSERT INTO "courses" ("id", "code", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2025-07-14 05:10:58.602937', '2025-07-14 05:10:58.602937'), (298486374, 'MyString', 'MyString', '2025-07-14 05:10:58.602937', '2025-07-14 05:10:58.602937');
+INSERT INTO "forms" ("id", "active_status", "receiver_role", "subject_id", "template_id", "created_at", "updated_at") VALUES (980190962, 0, 1, 980190962, 980190962, '2025-07-14 05:10:58.603571', '2025-07-14 05:10:58.603571'), (298486374, 0, 1, 298486374, 298486374, '2025-07-14 05:10:58.603571', '2025-07-14 05:10:58.603571');
+INSERT INTO "questions" ("id", "content", "question_type", "template_id", "created_at", "updated_at") VALUES (980190962, 'MyText', 1, 980190962, '2025-07-14 05:10:58.604653', '2025-07-14 05:10:58.604653'), (298486374, 'MyText', 1, 298486374, '2025-07-14 05:10:58.604653', '2025-07-14 05:10:58.604653');
+INSERT INTO "subjects" ("id", "class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2025-07-14 05:10:58.605365', '2025-07-14 05:10:58.605365'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2025-07-14 05:10:58.605365', '2025-07-14 05:10:58.605365');
+INSERT INTO "templates" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-07-14 05:10:58.606057', '2025-07-14 05:10:58.606057'), (298486374, 'MyString', '2025-07-14 05:10:58.606057', '2025-07-14 05:10:58.606057');
+INSERT INTO "user_forms" ("id", "status", "user_id", "form_id", "created_at", "updated_at") VALUES (980190962, 1, 980190962, 980190962, '2025-07-14 05:10:58.606458', '2025-07-14 05:10:58.606458'), (298486374, 1, 298486374, 298486374, '2025-07-14 05:10:58.606458', '2025-07-14 05:10:58.606458');
+INSERT INTO "user_subjects" ("id", "user_id", "subject_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2025-07-14 05:10:58.607106', '2025-07-14 05:10:58.607106'), (298486374, 298486374, 298486374, '2025-07-14 05:10:58.607106', '2025-07-14 05:10:58.607106');
+INSERT INTO "users" ("id", "name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username") VALUES (980190962, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:10:58.607672', '2025-07-14 05:10:58.607672', NULL), (298486374, 'MyString', 'MyString', 'MyString', 1, 1, 'MyString', 'MyString', 'MyString', '2025-07-14 05:10:58.607672', '2025-07-14 05:10:58.607672', NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2025-07-14 02:10:58 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+Admin::FormsControllerTest: test_should_get_index
+-------------------------------------------------
+Started GET "/admin/forms" for 127.0.0.1 at 2025-07-14 02:10:58 -0300
+Processing by Admin::FormsController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
