@@ -7,7 +7,7 @@ RSpec.describe 'Admin visualiza e exporta resultados de formulários', type: :sy
   let(:subject_instance) { create(:subject, class_name: 'Engenharia de Software') }
   let(:template) { create(:template, title: 'Avaliação Semestral') }
 
-  # O formulário é criado dentro de cada teste para maior clareza.
+ # O formulário é criado dentro de cada teste para maior clareza.
 
  before do
   # Usamos a URL direta como string.
@@ -67,6 +67,5 @@ end
     #    nós redirecionamos corretamente. ESTA É A CORREÇÃO.
     expect(page).to have_current_path(admin_form_path(form))
   end
-
   end
 end
