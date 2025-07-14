@@ -1,0 +1,11 @@
+<% if @forms.any? %>
+  <% @forms.each do |form| %>
+    <div class="form-card">
+      <h3><%= form.subject.class_name %></h3>
+      <p><%= form.subject.semester %></p>
+      <p><%= form.users.map(&:name).join(', ') %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>Nenhum formulário disponível</p>
+<% end %>
