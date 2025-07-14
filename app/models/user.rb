@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   enum :role, {
-    student: 0,
+    aluno: 0,
     professor: 1
   }
   enum :academic_background, {

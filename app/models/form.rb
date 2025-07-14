@@ -7,7 +7,7 @@ class Form < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   enum :receiver_role, {
-    student: 0,
+    aluno: 0,
     professor: 1
   }
 
