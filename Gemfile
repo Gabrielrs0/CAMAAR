@@ -20,6 +20,7 @@ gem "uri"
 gem "net-http"
 gem "timeout"
 gem "open-uri"
+gem 'bcrypt', '~> 3.1.7'
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -67,6 +68,12 @@ group :test do
   gem "cucumber-rails", require: false
   gem "capybara"
   gem "selenium-webdriver"
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 gem "database_cleaner-active_record", "~> 2.2", group: :test
