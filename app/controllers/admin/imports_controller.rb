@@ -4,18 +4,21 @@ module Admin
     before_action :authenticate_admin!
 
     def import_sigaa
-  
       courses_data = JSON.parse(File.read(Rails.root.join('classes.json')))
       participants_data = JSON.parse(File.read(Rails.root.join('class_members.json')))
 
-      # 2. Importação atômica
+      Rails.logger.info("Iniciando importação de dados do SIGAA...")
+
       ActiveRecord::Base.transaction do
         import_courses(courses_data)
         import_participants(participants_data)
       end
 
+      Rails.logger.info("Importação concluída com sucesso.")
       redirect_to admin_dashboard_path, notice: 'Dados importados com sucesso!'
     rescue StandardError => e
+      Rails.logger.error("Erro na importação do SIGAA: #{e.message}")
+      Rails.logger.error(e.backtrace.join("\n"))
       redirect_to admin_dashboard_path, alert: "Erro na importação: #{e.message}"
     end
 
@@ -23,26 +26,29 @@ module Admin
 
     def import_courses(data)
       data.each do |course|
-        # Cria/atualiza matérias
+        Rails.logger.info("Importando curso: #{course['code']} - #{course['name']}")
+
         course_record = Course.find_or_create_by!(code: course['code']) do |c|
           c.name = course['name']
         end
-        
-        # Cria/atualiza turmas (Subjects)
+
         class_data = course['class']
-        Subject.find_or_create_by!(
+        subject = Subject.find_or_create_by!(
           course: course_record,
           class_name: class_data['classCode'],
           semester: class_data['semester']
-        ) do |subject|
-          subject.schedule = class_data['time']
+        ) do |s|
+          s.schedule = class_data['time']
         end
+
+        Rails.logger.info("Turma importada: #{subject.class_name} - Semestre: #{subject.semester}")
       end
     end
 
     def import_participants(data)
       data.each do |class_info|
-        # Encontra a turma (Subject)
+        Rails.logger.info("Importando participantes para turma #{class_info['classCode']} - Semestre #{class_info['semester']}")
+
         subject = Subject.joins(:course)
                          .find_by!(
                            courses: { code: class_info['code'] },
@@ -50,48 +56,73 @@ module Admin
                            semester: class_info['semester']
                          )
 
-        # Importa estudantes (dicentes)
         class_info['dicente'].each do |student|
+          Rails.logger.info("Importando estudante: #{student['nome']} - #{student['email']}")
           user = create_student(student)
           UserSubject.find_or_create_by!(user: user, subject: subject)
         end
 
-        # Importa professor (docente)
         if class_info['docente']
+          Rails.logger.info("Importando docente: #{class_info['docente']['nome']} - #{class_info['docente']['email']}")
           user = create_professor(class_info['docente'])
           UserSubject.find_or_create_by!(user: user, subject: subject)
         end
       end
     end
 
- def create_student(data)
-  User.find_or_create_by!(email: data['email']) do |user|
-    user.name = data['nome']
-    user.username = data['usuario'] || data['matricula']
-    user.role = :student
-    # Use o método do modelo User
-    user.academic_background = User.map_academic_background(data['formacao'])
-    user.student_course = data['curso']
-    user.student_enrolment = data['matricula']
-    user.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
-  end
-end
+    def create_student(data)
+      Rails.logger.info("Criando ou encontrando estudante com email: #{data['email']}")
 
-def create_professor(data)
-  User.find_or_create_by!(email: data['email']) do |user|
-    user.name = data['nome']
-    user.username = data['usuario']
-    user.role = :professor
-    # Use o método do modelo User
-    user.academic_background = User.map_academic_background(data['formacao'])
-    user.professor_departament = data['departamento']
-    user.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
-  end
-end
-  def import_form
-  # Apenas renderiza a view import.html.erb
-  end
+      user = User.find_or_create_by!(email: data['email']) do |u|
+        u.name = data['nome']
+        u.username = data['usuario'] || data['matricula']
+        u.role = :student
+        u.academic_background = User.map_academic_background(data['formacao'])
+        u.student_course = data['curso']
+        u.student_enrolment = data['matricula']
+        u.password_token = SecureRandom.urlsafe_base64(32)
+        u.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
+      end
 
+      if user.password_defined_at.blank?
+        Rails.logger.info("Enviando link de definição de senha para estudante: #{user.email}")
+        send_password_definition_email(user)
+      end
+
+      user
+    end
+
+    def create_professor(data)
+      Rails.logger.info("Criando ou encontrando professor com email: #{data['email']}")
+
+      user = User.find_or_create_by!(email: data['email']) do |u|
+        u.name = data['nome']
+        u.username = data['usuario']
+        u.role = :professor
+        u.academic_background = User.map_academic_background(data['formacao'])
+        u.professor_departament = data['departamento']
+        u.password_token = SecureRandom.urlsafe_base64(32)
+        u.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
+      end
+
+      if user.password_defined_at.blank?
+        Rails.logger.info("Enviando link de definição de senha para professor: #{user.email}")
+        send_password_definition_email(user)
+      end
+
+      user
+    end
+
+    def send_password_definition_email(user)
+      token = user.password_token
+      url = Rails.application.routes.url_helpers.definir_senha_url(token: token, host: 'http://localhost:3000')
+      Rails.logger.info("🔑 Link de definição de senha para #{user.email}: #{url}")
+      puts "🔑 Link de definição de senha para #{user.email}: #{url}"
+    end
+
+    def import_form
+      # Apenas renderiza a view import.html.erb
+    end
 
     def authenticate_admin!
       true
