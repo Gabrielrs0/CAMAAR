@@ -1,0 +1,7 @@
+<h1>Importar Dados do SIGAA</h1>
+
+<p>Esta ação irá importar cursos, turmas e participantes a partir dos arquivos <code>classes.json</code> e <code>class_members.json</code> na raiz do projeto.</p>
+
+<%= form_with url: admin_import_sigaa_path, method: :post, local: true do %>
+  <%= submit_tag "Importar Agora", class: "btn btn-primary" %>
+<% end %>

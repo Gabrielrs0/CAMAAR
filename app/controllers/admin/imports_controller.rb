@@ -88,6 +88,10 @@ def create_professor(data)
     user.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
   end
 end
+  def import_form
+  # Apenas renderiza a view import.html.erb
+  end
+
 
     def authenticate_admin!
       true

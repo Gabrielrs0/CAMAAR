@@ -7,15 +7,5 @@ class Subject < ApplicationRecord
 
   # Garante que turma, horário e semestre sejam não nulos
   validates :class_name, :schedule, :semester, presence: true
-  # Garante que não haverá outra matéria com a mesma turma, horário e semestre.
-  validates :class_name, uniqueness: {
-    scope: [ :schedule, :semester ],
-    message: "já existe com este horário e semestre."
-  }
 
-  # Garante que não haverá outra matéria com a mesma turma e semestre.
-  validates :class_name, uniqueness: {
-    scope: :semester,
-    message: "já existe para este semestre."
-  }
 end

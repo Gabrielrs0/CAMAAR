@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     post 'import/sigaa', to: 'imports#import_sigaa'
     get 'dashboard', to: 'dashboard#index', as: 'dashboard'
+    get 'import', to: 'imports#import_form'
   end
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
