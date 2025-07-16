@@ -26,6 +26,6 @@ class User < ApplicationRecord
   validates :student_course, :student_enrolment, presence: true, if: :aluno?
   # Valida que os campos de aluno estão vazios se o usuário for um professor, e que o campos relacionados ao docente não estejam vazios
   validates :student_course, :student_enrolment, absence: true, if: :professor?
-  # validates :student_enrolment, absence: true, if: :professor?
+  validates :student_enrolment, absence: true, if: :professor?
   validates :professor_departament, presence: true, if: :professor?
 end
