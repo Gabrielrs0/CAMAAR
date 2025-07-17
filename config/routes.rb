@@ -14,12 +14,11 @@ Rails.application.routes.draw do
 
 
   # Rotas de login e logout
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  get '/login', to: 'sessions#new', as: :login
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy', as: :logout
 
-
-  root "sessions#new"
+  root to: "home#index" #VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
 
 
   #root 'pages#login' 

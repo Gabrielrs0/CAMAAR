@@ -15,6 +15,12 @@ module Camaar
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
+    
+    # False para habilitar sessoes e cookies; 
+    # Os proximos garantem q o middleware de cookies + session sejam carregados
+    config.api_only = false
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore, key: '_camaar_session'
 
     # Configuration for the application, engines, and railties goes here.
     #
