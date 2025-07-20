@@ -60,7 +60,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem 'letter_opener'
   gem "spring"
 end
 
@@ -77,3 +77,5 @@ group :development, :test do
 end
 
 gem "database_cleaner-active_record", "~> 2.2", group: :test
+
+gem "tailwindcss-rails", "~> 4.3"

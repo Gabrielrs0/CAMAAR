@@ -1,11 +1,11 @@
-# app/controllers/admin/imports_controller.rb
+
 module Admin
   class ImportsController < ApplicationController
     before_action :authenticate_admin!
 
     def import_sigaa
       courses_data = JSON.parse(File.read(Rails.root.join('classes.json')))
-      participants_data = JSON.parse(File.read(Rails.root.join('class_members.json')))
+      participants_data = JSON.parse(File.read(Rails.root.join('class_members2.json')))
 
       Rails.logger.info("Iniciando importação de dados do SIGAA...")
 
@@ -84,13 +84,15 @@ module Admin
         u.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
       end
 
-      if user.password_defined_at.blank?
-        Rails.logger.info("Enviando link de definição de senha para estudante: #{user.email}")
-        send_password_definition_email(user)
-      end
 
+     #if user.password_defined_at.blank?
+     # Rails.logger.info("Enviando link de definição de senha para estudante: #{user.email}")
+      #  send_password_definition_email(user)
+      
+   # end
+      enviar_email_definicao_senha(user)
       user
-    end
+  end
 
     def create_professor(data)
       Rails.logger.info("Criando ou encontrando professor com email: #{data['email']}")
@@ -105,20 +107,27 @@ module Admin
         u.hash_password = BCrypt::Password.create(SecureRandom.hex(10))
       end
 
-      if user.password_defined_at.blank?
-        Rails.logger.info("Enviando link de definição de senha para professor: #{user.email}")
-        send_password_definition_email(user)
-      end
-
+     # if user.password_defined_at.blank?
+       # Rails.logger.info("Enviando link de definição de senha para professor: #{user.email}")
+        #send_password_definition_email(user)
+      #end
+      enviar_email_definicao_senha(user)
       user
-    end
+   end
 
-    def send_password_definition_email(user)
-      token = user.password_token
-      url = Rails.application.routes.url_helpers.definir_senha_url(token: token, host: 'http://localhost:3000')
-      Rails.logger.info("🔑 Link de definição de senha para #{user.email}: #{url}")
-      puts "🔑 Link de definição de senha para #{user.email}: #{url}"
-    end
+    #def send_password_definition_email(user)
+    #  token = user.password_token
+     # url = Rails.application.routes.url_helpers.definir_senha_url(token: token, host: 'http://localhost:3000')
+     # Rails.logger.info("🔑 Link de definição de senha para #{user.email}: #{url}")
+     # puts "🔑 Link de definição de senha para #{user.email}: #{url}"
+   # end
+   def enviar_email_definicao_senha(user)
+    return unless user.password_defined_at.blank?
+
+    Rails.logger.info("Enviando link de definição de senha para #{user.email}")
+    UsuarioMailer.definicao_senha_email(user).deliver_later # "deliver_now" para realizar testes em dev
+  end
+
 
     def import_form
       # Apenas renderiza a view import.html.erb

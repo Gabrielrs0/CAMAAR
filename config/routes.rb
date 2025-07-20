@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get  '/definir-senha/:token', to: 'senha_definicao#edit',   as: :definir_senha
   post '/definir-senha/:token', to: 'senha_definicao#update'
+  root "admin/dashboard#index"
+
+
+
+
   namespace :admin do
     post 'import/sigaa', to: 'imports#import_sigaa'
     get 'dashboard', to: 'dashboard#index', as: 'dashboard'

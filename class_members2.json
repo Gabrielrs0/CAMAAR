@@ -1,0 +1,27 @@
+[
+    {
+        "code": "CIC0097",
+        "classCode": "TA",
+        "semester": "2021.2",
+        "dicente": [
+            {
+                "nome": "Gabriel",
+                "curso": "ENGENHARIA DE COMPUTAÇÃO/FT",
+                "matricula": "222005401",
+                "usuario": "222005401",
+                "formacao": "graduando",
+                "ocupacao": "dicente",
+                "email": "gabrielrszica0800@gmail.com"
+            }
+            
+        ],
+        "docente": {
+            "nome": "Janaina",
+            "departamento": "DEPTO CIÊNCIAS DA COMPUTAÇÃO",
+            "formacao": "DOUTORADO",
+            "usuario": "00000000",
+            "email": "exemplo@unb.br",
+            "ocupacao": "docente"
+        }
+    }
+]
