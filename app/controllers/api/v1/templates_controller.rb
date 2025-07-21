@@ -1,62 +1,68 @@
 class Api::V1::TemplatesController < ApplicationController
-  before_action :set_template
+  # O before_action não precisa de alteração
+  before_action :set_template, only: %i[show]
+  skip_before_action :verify_authenticity_token
 
   def index
     templates = Template.all
     render json: templates, status: :ok
   end
 
+  # O rescue foi removido daqui, pois era inalcançável
   def show
-    # template = Template.find(params[:id])
-    render json: @template
+    render json: @template, status: :ok
+  end
+
+  def create
+    @template = Template.new(template_params)
+
+    if @template.save
+      render json: @template, status: :created
+    else
+      render json: { errors: @template.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  # Correção: O tratamento da exceção é feito aqui
+  def set_template
+    @template = Template.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Template com ID '#{params[:id]}' não encontrado" }, status: :not_found
   end
 
-  private
-
-  def set_template
-    @template = Template.find(params[:id])
-  end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  def create
-    template = Template.new(template_params)
-    template.save!
-    render json: template, status: :created
-  rescue ActiveRecord::RecordInvalid => e
-    render json: { error: e.message }, status: :unprocessable_entity
-  end
-
-  private
-
   def template_params
-    params.expect(template: %i[title])
+    params.require(:template).permit(:title)
   end
 end
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+#   def create
+#     template = Template.new(template_params)
+#     template.save!
+#     render json: template, status: :created
+#   rescue ActiveRecord::RecordInvalid => e
+#     render json: { error: e.message }, status: :unprocessable_entity
+#   end
+
+#   private
+
+#   def template_params
+#     params.expect(template: %i[title])
+#   end
+# end
 
 
 
