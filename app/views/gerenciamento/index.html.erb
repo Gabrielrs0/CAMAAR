@@ -1,0 +1,41 @@
+<div class="flex h-screen">
+  <!-- Menu lateral -->
+  <aside class="w-48 bg-white border-r">
+    <div class="text-sm px-4 py-6">
+      <p class="text-gray-600 font-bold mb-2">Gerenciamento</p>
+      <ul class="space-y-1">
+        <li class="pl-2 border-l-4 border-purple-700 text-purple-700 font-semibold">Gerenciamento</li>
+        <li class="pl-2 text-gray-600 hover:text-gray-800">Avaliações</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="flex-1 flex flex-col">
+    <!-- Barra superior -->
+    <header class="flex items-center justify-between px-6 py-4 border-b bg-white">
+      <h1 class="text-lg font-medium">Gerenciamento</h1>
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <input type="text" placeholder="Pesquisar..." class="border rounded-full px-4 py-1 text-sm" />
+        </div>
+        <div class="bg-purple-700 text-white w-8 h-8 rounded-full flex items-center justify-center">
+          U
+        </div>
+      </div>
+    </header>
+
+    <!-- Corpo da página -->
+    <div class="flex-1 flex items-center justify-center bg-gray-200">
+        <div class="bg-white p-16 rounded-lg shadow space-y-3 w-[36rem] h-[48rem] flex flex-col justify-center">
+            <%= button_to "Importar dados", admin_import_sigaa_path, method: :post, local: true , class: "text-white text-2xl w-full py-4 px-4 rounded hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed bg-green-600", disabled: false %>
+
+            <%= button_to "Editar Templates", editar_templates_path, method: :get, class: "text-white text-2xl w-full py-4 px-4rounded hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed bg-green-300", disabled: !@completed_steps.include?("importar_dados") %>
+
+            <%= button_to "Enviar Formulários", enviar_formularios_path, method: :post, class: "text-white text-2xl w-full py-4 px-4 rounded hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed bg-green-300", disabled: !@completed_steps.include?("editar_templates") %>
+
+            <%= button_to "Resultados", resultados_path, method: :get, class: "text-white text-2xl w-full py-4 px-4 rounded hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed bg-green-300", disabled: !@completed_steps.include?("enviar_formularios") %>
+        </div>
+    </div>
+  </main>
+</div>

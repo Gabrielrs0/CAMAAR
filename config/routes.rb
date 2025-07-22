@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   root "admin/dashboard#index"
 
 
+  get "/gerenciamento", to: "gerenciamento#index"
+  get "/importar_dados", to: "gerenciamento#importar_dados"
+  get "/editar_templates", to: "gerenciamento#editar_templates"
+  get "/enviar_formularios", to: "gerenciamento#enviar_formularios"
+  get "/resultados", to: "gerenciamento#resultados"
 
 
   namespace :admin do
