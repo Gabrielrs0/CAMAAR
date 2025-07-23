@@ -1,26 +1,36 @@
-
 module Admin
   class ImportsController < ApplicationController
     before_action :authenticate_admin!
 
     def import_sigaa
-      courses_data = JSON.parse(File.read(Rails.root.join('classes.json')))
-      participants_data = JSON.parse(File.read(Rails.root.join('class_members2.json')))
+      uploaded_file = params[:arquivo]
 
-      Rails.logger.info("Iniciando importação de dados do SIGAA...")
+      begin
+        file_content = uploaded_file.read
+        json_data = JSON.parse(file_content)
 
-      ActiveRecord::Base.transaction do
-        import_courses(courses_data)
-        import_participants(participants_data)
+        Rails.logger.info("Iniciando importação de dados do SIGAA...")
+
+        ActiveRecord::Base.transaction do
+          if json_data.first&.key?('class') && json_data.first&.key?('code')
+            Rails.logger.info("Detectado JSON de turmas")
+            import_courses(json_data)
+          elsif json_data.first&.key?('dicente') && json_data.first&.key?('code')
+            Rails.logger.info("Detectado JSON de participantes")
+            import_participants(json_data)
+          else
+            raise "Formato de arquivo não reconhecido."
+          end
+        end
+        redirect_to importar_dados_path
+
+      rescue => e
+        redirect_to gerenciamento_path, alert: "Erro na importação: #{e.message}"
       end
-
-      Rails.logger.info("Importação concluída com sucesso.")
-      redirect_to admin_dashboard_path, notice: 'Dados importados com sucesso!'
-    rescue StandardError => e
-      Rails.logger.error("Erro na importação do SIGAA: #{e.message}")
-      Rails.logger.error(e.backtrace.join("\n"))
-      redirect_to admin_dashboard_path, alert: "Erro na importação: #{e.message}"
     end
+
+
+
 
     private
 
@@ -90,7 +100,7 @@ module Admin
       #  send_password_definition_email(user)
       
    # end
-      enviar_email_definicao_senha(user)
+     enviar_email_definicao_senha(user)
       user
   end
 
@@ -111,7 +121,7 @@ module Admin
        # Rails.logger.info("Enviando link de definição de senha para professor: #{user.email}")
         #send_password_definition_email(user)
       #end
-      enviar_email_definicao_senha(user)
+     enviar_email_definicao_senha(user)
       user
    end
 

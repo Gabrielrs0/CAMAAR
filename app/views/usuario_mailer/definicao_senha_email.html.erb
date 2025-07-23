@@ -1,9 +1,29 @@
-<h1>Olá, <%= @user.name || @user.email %>!</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Definir Senha</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-center">
+      <h1 class="text-2xl font-bold text-gray-800 mb-4">Olá, <%= @user.name || @user.email %>!</h1>
+      
+      <p class="text-gray-600 mb-6">
+        Recebemos uma solicitação para definir sua senha. Clique no botão abaixo para continuar:
+      </p>
 
-<p>Para definir sua senha, clique no link abaixo:</p>
+      <a
+        href="<%= @url %>"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
 
-<p>
-  <a href="<%= @url %>">Definir minha senha</a>
-</p>
-
-<p>Se você não solicitou este e-mail, pode ignorá-lo.</p>
+      <p class="text-sm text-gray-500 mt-6">
+        Se você não solicitou este e-mail, pode simplesmente ignorá-lo.
+      </p>
+    </div>
+  </body>
+</html>

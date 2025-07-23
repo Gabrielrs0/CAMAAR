@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get "/editar_templates", to: "gerenciamento#editar_templates"
   get "/enviar_formularios", to: "gerenciamento#enviar_formularios"
   get "/resultados", to: "gerenciamento#resultados"
+  get 'gerenciamento/importar_dados', to: 'gerenciamento#importar_dados'
+  post "/enviar_formularios", to: "gerenciamento#enviar_formularios"
+  get "/resetar_etapas", to: "gerenciamento#resetar_etapas"
+
 
 
   namespace :admin do
