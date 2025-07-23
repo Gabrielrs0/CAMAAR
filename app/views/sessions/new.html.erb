@@ -1,36 +1,33 @@
-<%= form_with url: login_path, scope: :session, local: true do |f| %>
-    <%= f.label :identifier, "Email ou Matrícula" %>
-    <%= f.text_field :identifier %>
 
-    <%= f.label :password, "Senha" %>
-    <%= f.password_field :password %>  
+<div class="login-page">
 
-    <%= f.submit "Entrar" %>
-<%= end %>
+  <div class="login-section">
+    <div class="login-content">
+        <% if flash[:alert] %>
+            <div class="alert"><%= flash[:alert] %></div>
+        <% end %>
+    
+        <h2>Login</h2>
 
+        <%= form_with url: login_path, scope: :session, local: true do |f| %>
+            <div class="pad-section">
+            <%= f.label :identifier, "Email ou Matrícula" %>
+            <%= f.text_field :identifier, placeholder: "aluno@aluno.unb.br", class: "input-field" %>
+            </div>
 
-<!DOCTYPE html>
-# <html>
-#     <head>
-#         <meta charset="utf-8"
-#     </head>
-#     <body class="login-page-body">
-#         <div class="login-page-container">
+            <div class="pad-section">
+            <%= f.label :password, "Senha" %>
+            <%= f.password_field :password, placeholder: "password", class: "input-field" %>
+            </div>
 
-#             <div class="login-page-login-section">
-#                 <h2>Login</h2>
-#                 <label>Email</label>
-#                 <input type="text" placeholder="aluno@aluno.unb.br">
-#                 <label>Senha</label>
-#                 <input type="password" placeholder="password">
-#                 <button class="login-page-button" type="button">Entrar</button> 
-#             </div>
+            <%= f.submit "Entrar", class: "button" %>
+        <% end %>
+    </div>
+  </div>
 
-#             </div class="login-page-welcome-section">
-#                 <h1>Bem vindo ao Camaar</h1>
-#             </div>
+  <div class="welcome-section">
+    <h1>Bem-vindo ao Camaar</h1>
+  </div>
 
-#         </div>
-#     </body>
-# </html>
+</div>
 
