@@ -24507,3 +24507,1175 @@ Processing by AvaliacoesController#index as HTML
 Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:19:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 15.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | GC: 0.0ms)
+Completed 200 OK in 522ms (Views: 53.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 130.0ms)
+
+
+Started GET "/assets/tailwind-c1d07b23.css" for 127.0.0.1 at 2025-07-23 20:19:57 -0300
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:24:26 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 11.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 32.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/avaliacoes" for 127.0.0.1 at 2025-07-23 20:24:30 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:32:56 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | GC: 30.7ms)
+Completed 200 OK in 81ms (Views: 64.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 30.7ms)
+
+
+Started GET "/assets/tailwind-08c28bed.css" for 127.0.0.1 at 2025-07-23 20:32:56 -0300
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:33:46 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.2ms)
+Completed 200 OK in 32ms (Views: 19.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:35:40 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 13.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:35:41 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 20:35:42 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.2ms)
+Completed 200 OK in 23ms (Views: 11.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 21:57:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 8.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | GC: 0.0ms)
+Completed 200 OK in 295ms (Views: 28.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 57.2ms)
+
+
+Started GET "/avaliacoes" for 127.0.0.1 at 2025-07-23 21:57:11 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-23 21:57:35 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fdd0e7e1e70 @tempfile=#<Tempfile:/tmp/RackMultipart20250723-36310-kt9n87.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de participantes
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mSubject Load (2.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:14:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 120ms (ActiveRecord: 17.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 21:57:35 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 11.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 21:58:24 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | GC: 0.3ms)
+Completed 200 OK in 49ms (Views: 34.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-23 21:58:29 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fdd0e661690 @tempfile=#<Tempfile:/tmp/RackMultipart20250723-36310-rl7wid.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de participantes
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:14:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 127ms (ActiveRecord: 11.8ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 21:58:29 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 14.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-23 22:00:02 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fdd0e86ec58 @tempfile=#<Tempfile:/tmp/RackMultipart20250723-36310-2w5x9m.json>, @content_type="application/json", @original_filename="classes.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"classes.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de turmas
+Importando curso: CIC0097 - BANCOS DE DADOS
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Load (4.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0097' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = 'CIC0097' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = 'BANCOS DE DADOS' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Create (0.6ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES ('CIC0097', 'BANCOS DE DADOS', '2025-07-24 01:00:02.752907', '2025-07-24 01:00:02.752907') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 38 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mSubject Create (4.3ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES ('TA', '35T45', '2021.2', 38, '2025-07-24 01:00:02.813459', '2025-07-24 01:00:02.813459') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+Turma importada: TA - Semestre: 2021.2
+Importando curso: CIC0105 - ENGENHARIA DE SOFTWARE
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0105' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = 'CIC0105' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = 'ENGENHARIA DE SOFTWARE' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Create (1.3ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES ('CIC0105', 'ENGENHARIA DE SOFTWARE', '2025-07-24 01:00:02.846687', '2025-07-24 01:00:02.846687') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 39 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mSubject Create (3.2ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES ('TA', '35M12', '2021.2', 39, '2025-07-24 01:00:02.884218', '2025-07-24 01:00:02.884218') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+Turma importada: TA - Semestre: 2021.2
+Importando curso: CIC0202 - PROGRAMAÇÃO CONCORRENTE
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0202' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = 'CIC0202' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = 'PROGRAMAÇÃO CONCORRENTE' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES ('CIC0202', 'PROGRAMAÇÃO CONCORRENTE', '2025-07-24 01:00:02.913744', '2025-07-24 01:00:02.913744') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:41:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 40 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mSubject Create (3.3ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES ('TA', '35M34', '2021.2', 40, '2025-07-24 01:00:02.932825', '2025-07-24 01:00:02.932825') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:46:in 'block in Admin::ImportsController#import_courses'
+Turma importada: TA - Semestre: 2021.2
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:14:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/importar_dados
+Completed 302 Found in 271ms (ActiveRecord: 31.6ms (18 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/importar_dados" for 127.0.0.1 at 2025-07-23 22:00:02 -0300
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:00:02 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:28 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 9.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:30 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 13.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 21.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:31 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:32 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:33 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 16.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 22.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:33 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:34 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:34 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/editar_templates" for 127.0.0.1 at 2025-07-23 22:01:51 -0300
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:51 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 14.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/enviar_formularios" for 127.0.0.1 at 2025-07-23 22:01:53 -0300
+Processing by GerenciamentoController#enviar_formularios as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:53 -0300
+Processing by GerenciamentoController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/resultados" for 127.0.0.1 at 2025-07-23 22:01:54 -0300
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:01:54 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:02:23 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 9.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 28.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:02:23 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-23 22:02:29 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fdd0ca4f970 @tempfile=#<Tempfile:/tmp/RackMultipart20250723-36310-9jr7vm.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de participantes
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+Importando estudante: Gabriel - gabrielrszica0800@gmail.com
+Criando ou encontrando estudante com email: gabrielrszica0800@gmail.com
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '222005401' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Gabriel', 'gabrielrszica0800@gmail.com', '$2a$12$S8JmUiVbHxYnA8GZlStJAegnxLxHnrhJ.g28oxS9bhjMkhqnGVERa', 0, 0, 'ENGENHARIA DE COMPUTAÇÃO/FT', '222005401', NULL, '2025-07-24 01:02:30.047695', '2025-07-24 01:02:30.047695', '222005401', NULL, 'FKxPr2D9LIwzVkiW1ccTrjflPqvYFqBqXm4wrQK6i18') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+Enviando link de definição de senha para gabrielrszica0800@gmail.com
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 94bc9571-f284-4248-a5e3-ccaf59378f62) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0c698110 @uri=#<URI::GID gid://camaar/User/465>>]}
+[ActiveJob] ↳ app/controllers/admin/imports_controller.rb:138:in 'Admin::ImportsController#enviar_email_definicao_senha'
+  [1m[36mUserSubject Load (0.1ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 465 AND "user_subjects"."subject_id" = 40 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:72:in 'block (2 levels) in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:72:in 'block (2 levels) in Admin::ImportsController#import_participants'
+  [1m[36mUserSubject Create (0.1ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (465, 40, '2025-07-24 01:02:30.205376', '2025-07-24 01:02:30.205376') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:72:in 'block (2 levels) in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:72:in 'block (2 levels) in Admin::ImportsController#import_participants'
+Importando docente: Janaina - exemplo@unb.br
+Criando ou encontrando professor com email: exemplo@unb.br
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [94bc9571-f284-4248-a5e3-ccaf59378f62]   [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 465 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [94bc9571-f284-4248-a5e3-ccaf59378f62] Error performing ActionMailer::MailDeliveryJob (Job ID: 94bc9571-f284-4248-a5e3-ccaf59378f62) from Async(default) in 14.99ms: ActiveJob::DeserializationError (Error while trying to deserialize arguments: Couldn't find User with 'id'=465):
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:428:in 'ActiveRecord::FinderMethods#raise_record_not_found_exception!'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:536:in 'ActiveRecord::FinderMethods#find_one'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:513:in 'ActiveRecord::FinderMethods#find_with_ids'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:100:in 'ActiveRecord::FinderMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/querying.rb:24:in 'ActiveRecord::Querying#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/core.rb:273:in 'ActiveRecord::Core::ClassMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:162:in 'GlobalID::Locator::BaseLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'block in GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'block in GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:1373:in 'ActiveRecord::Relation#_scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:548:in 'ActiveRecord::Relation#scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/scoping/default.rb:51:in 'ActiveRecord::Scoping::Default::ClassMethods#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:31:in 'GlobalID::Locator.locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:134:in 'ActiveJob::Arguments#deserialize_global_id'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:118:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'block in ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'block in ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'Hash#transform_values'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:122:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'block in ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:195:in 'ActiveJob::Core#deserialize_arguments'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:185:in 'ActiveJob::Core#deserialize_arguments_if_needed'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:49:in 'ActiveJob::Execution#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'block in ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in 'block in ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'block in ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:29:in 'block in ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:95:in 'block (4 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:77:in 'block in ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:91:in 'ActiveSupport::ExecutionWrapper.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:74:in 'ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:94:in 'block (3 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:27:in 'ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/queue_adapters/async_adapter.rb:70:in 'ActiveJob::QueueAdapters::AsyncAdapter::JobWrapper#perform'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in 'Concurrent::RubyThreadPoolExecutor::Worker#run_task'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in 'block (3 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+<internal:kernel>:168:in 'Kernel#loop'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in 'block (2 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'Kernel#catch'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'block in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '00000000' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Janaina', 'exemplo@unb.br', '$2a$12$WKNoTAFxzaOX5mjy7wSdDeYYh7l54XGQZuvbJwlAL/Kpa/3.n8jo.', 1, 0, NULL, NULL, 'DEPTO CIÊNCIAS DA COMPUTAÇÃO', '2025-07-24 01:02:30.427915', '2025-07-24 01:02:30.427915', '00000000', NULL, 'Mlk3Dy3zNgU2mMS2r-aMQ_yX0EDvvXJr0zuwMbXWBIk') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+Enviando link de definição de senha para exemplo@unb.br
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: e524f3ea-95b9-4fb5-a013-e51096e0cdb5) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0c4051f0 @uri=#<URI::GID gid://camaar/User/466>>]}
+[ActiveJob] ↳ app/controllers/admin/imports_controller.rb:138:in 'Admin::ImportsController#enviar_email_definicao_senha'
+  [1m[36mUserSubject Load (0.2ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 466 AND "user_subjects"."subject_id" = 40 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:78:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:78:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mUserSubject Create (2.2ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (466, 40, '2025-07-24 01:02:30.453601', '2025-07-24 01:02:30.453601') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:78:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:78:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:14:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/importar_dados
+Completed 302 Found in 829ms (ActiveRecord: 35.0ms (13 queries, 0 cached) | GC: 0.0ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 466 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5] Performing ActionMailer::MailDeliveryJob (Job ID: e524f3ea-95b9-4fb5-a013-e51096e0cdb5) from Async(default) enqueued at 2025-07-24T01:02:30.436597153Z with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0c2cf678 @uri=#<URI::GID gid://camaar/User/466>>]}
+Started GET "/importar_dados" for 127.0.0.1 at 2025-07-23 22:02:30 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5]   Rendering usuario_mailer/definicao_senha_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5]   Rendered usuario_mailer/definicao_senha_email.html.erb within layouts/mailer (Duration: 1.8ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5]   Rendered layout layouts/mailer.html.erb (Duration: 3.2ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5] UsuarioMailer#definicao_senha_email: processed outbound mail in 34.8ms
+Processing by GerenciamentoController#importar_dados as HTML
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5] Delivered mail 6881862689262_8dd65328789ce@localhost.mail (37.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5] Date: Wed, 23 Jul 2025 22:02:30 -0300
+From: no-reply@suaapp.com
+To: exemplo@unb.br
+Message-ID: <6881862689262_8dd65328789ce@localhost.mail>
+Subject: Defina sua senha
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/usuario_mailer/definicao_senha_email.html.erb --=
+><!DOCTYPE html>
+<html lang=3D"pt-BR">
+  <head>
+    <meta charset=3D"UTF-8" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1.0" />
+    <title>Definir Senha</title>
+    <link href=3D"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/ta=
+ilwind.min.css" rel=3D"stylesheet" />
+  </head>
+  <body class=3D"bg-gray-100 flex items-center justify-center min-h-scree=
+n">
+    <div class=3D"bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-=
+center">
+      <h1 class=3D"text-2xl font-bold text-gray-800 mb-4">Ol=C3=A1, Janai=
+na!</h1>
+      =
+
+      <p class=3D"text-gray-600 mb-6">
+        Recebemos uma solicita=C3=A7=C3=A3o para definir sua senha. Cliqu=
+e no bot=C3=A3o abaixo para continuar:
+      </p>
+
+      <a
+        href=3D"http://localhost:3000/definir-senha/Mlk3Dy3zNgU2mMS2r-aMQ=
+_yX0EDvvXJr0zuwMbXWBIk"
+        class=3D"inline-block bg-blue-600 hover:bg-blue-700 text-white fo=
+nt-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
+
+      <p class=3D"text-sm text-gray-500 mt-6">
+        Se voc=C3=AA n=C3=A3o solicitou este e-mail, pode simplesmente ig=
+nor=C3=A1-lo.
+      </p>
+    </div>
+  </body>
+</html>
+<!-- END app/views/usuario_mailer/definicao_senha_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e524f3ea-95b9-4fb5-a013-e51096e0cdb5] Performed ActionMailer::MailDeliveryJob (Job ID: e524f3ea-95b9-4fb5-a013-e51096e0cdb5) from Async(default) in 99.1ms
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 19ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:02:30 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/editar_templates" for 127.0.0.1 at 2025-07-23 22:02:43 -0300
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 33ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:02:43 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 17.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/enviar_formularios" for 127.0.0.1 at 2025-07-23 22:02:46 -0300
+Processing by GerenciamentoController#enviar_formularios as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:02:46 -0300
+Processing by GerenciamentoController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/resultados" for 127.0.0.1 at 2025-07-23 22:02:48 -0300
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:02:48 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:55:23 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 25.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | GC: 0.0ms)
+Completed 200 OK in 91ms (Views: 57.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-23 22:55:29 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fdce74f30c8 @tempfile=#<Tempfile:/tmp/RackMultipart20250723-36310-4uf8cf.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de participantes
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mSubject Load (13.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+Importando estudante: Gabriel - gabrielrszica0800@gmail.com
+Criando ou encontrando estudante com email: gabrielrszica0800@gmail.com
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+Enviando link de definição de senha para gabrielrszica0800@gmail.com
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 19b06471-986a-4847-b600-a8dcdeee1f24) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0ea64198 @uri=#<URI::GID gid://camaar/User/465>>]}
+[ActiveJob] ↳ app/controllers/admin/imports_controller.rb:138:in 'Admin::ImportsController#enviar_email_definicao_senha'
+  [1m[36mUserSubject Load (0.1ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 465 AND "user_subjects"."subject_id" = 40 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:72:in 'block (2 levels) in Admin::ImportsController#import_participants'
+Importando docente: Janaina - exemplo@unb.br
+Criando ou encontrando professor com email: exemplo@unb.br
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+Enviando link de definição de senha para exemplo@unb.br
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: d00591a0-f669-4617-b878-9848a84e50a3) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0e8752b0 @uri=#<URI::GID gid://camaar/User/466>>]}
+[ActiveJob] ↳ app/controllers/admin/imports_controller.rb:138:in 'Admin::ImportsController#enviar_email_definicao_senha'
+  [1m[36mUserSubject Load (0.2ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 466 AND "user_subjects"."subject_id" = 40 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:78:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:14:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/importar_dados
+Completed 302 Found in 520ms (ActiveRecord: 15.0ms (5 queries, 0 cached) | GC: 99.4ms)
+
+
+Started GET "/importar_dados" for 127.0.0.1 at 2025-07-23 22:55:30 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 466 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3] Performing ActionMailer::MailDeliveryJob (Job ID: d00591a0-f669-4617-b878-9848a84e50a3) from Async(default) enqueued at 2025-07-24T01:55:30.297339126Z with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0e882140 @uri=#<URI::GID gid://camaar/User/466>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 465 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24] Performing ActionMailer::MailDeliveryJob (Job ID: 19b06471-986a-4847-b600-a8dcdeee1f24) from Async(default) enqueued at 2025-07-24T01:55:30.250859407Z with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0e848eb8 @uri=#<URI::GID gid://camaar/User/465>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3]   Rendering usuario_mailer/definicao_senha_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24]   Rendering usuario_mailer/definicao_senha_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3]   Rendered usuario_mailer/definicao_senha_email.html.erb within layouts/mailer (Duration: 9.9ms | GC: 1.9ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24]   Rendered usuario_mailer/definicao_senha_email.html.erb within layouts/mailer (Duration: 1.4ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3]   Rendered layout layouts/mailer.html.erb (Duration: 14.5ms | GC: 1.9ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24]   Rendered layout layouts/mailer.html.erb (Duration: 3.7ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3] UsuarioMailer#definicao_senha_email: processed outbound mail in 27.9ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24] UsuarioMailer#definicao_senha_email: processed outbound mail in 12.2ms
+Processing by GerenciamentoController#importar_dados as HTML
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24] Delivered mail 688192925af15_8dd6532879128@localhost.mail (41.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3] Delivered mail 6881929259198_8dd660d07907f@localhost.mail (49.4ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24] Date: Wed, 23 Jul 2025 22:55:30 -0300
+From: no-reply@suaapp.com
+To: gabrielrszica0800@gmail.com
+Message-ID: <688192925af15_8dd6532879128@localhost.mail>
+Subject: Defina sua senha
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/usuario_mailer/definicao_senha_email.html.erb --=
+><!DOCTYPE html>
+<html lang=3D"pt-BR">
+  <head>
+    <meta charset=3D"UTF-8" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1.0" />
+    <title>Definir Senha</title>
+    <link href=3D"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/ta=
+ilwind.min.css" rel=3D"stylesheet" />
+  </head>
+  <body class=3D"bg-gray-100 flex items-center justify-center min-h-scree=
+n">
+    <div class=3D"bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-=
+center">
+      <h1 class=3D"text-2xl font-bold text-gray-800 mb-4">Ol=C3=A1, Gabri=
+el!</h1>
+      =
+
+      <p class=3D"text-gray-600 mb-6">
+        Recebemos uma solicita=C3=A7=C3=A3o para definir sua senha. Cliqu=
+e no bot=C3=A3o abaixo para continuar:
+      </p>
+
+      <a
+        href=3D"http://localhost:3000/definir-senha/FKxPr2D9LIwzVkiW1ccTr=
+jflPqvYFqBqXm4wrQK6i18"
+        class=3D"inline-block bg-blue-600 hover:bg-blue-700 text-white fo=
+nt-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
+
+      <p class=3D"text-sm text-gray-500 mt-6">
+        Se voc=C3=AA n=C3=A3o solicitou este e-mail, pode simplesmente ig=
+nor=C3=A1-lo.
+      </p>
+    </div>
+  </body>
+</html>
+<!-- END app/views/usuario_mailer/definicao_senha_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3] Date: Wed, 23 Jul 2025 22:55:30 -0300
+From: no-reply@suaapp.com
+To: exemplo@unb.br
+Message-ID: <6881929259198_8dd660d07907f@localhost.mail>
+Subject: Defina sua senha
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/usuario_mailer/definicao_senha_email.html.erb --=
+><!DOCTYPE html>
+<html lang=3D"pt-BR">
+  <head>
+    <meta charset=3D"UTF-8" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1.0" />
+    <title>Definir Senha</title>
+    <link href=3D"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/ta=
+ilwind.min.css" rel=3D"stylesheet" />
+  </head>
+  <body class=3D"bg-gray-100 flex items-center justify-center min-h-scree=
+n">
+    <div class=3D"bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-=
+center">
+      <h1 class=3D"text-2xl font-bold text-gray-800 mb-4">Ol=C3=A1, Janai=
+na!</h1>
+      =
+
+      <p class=3D"text-gray-600 mb-6">
+        Recebemos uma solicita=C3=A7=C3=A3o para definir sua senha. Cliqu=
+e no bot=C3=A3o abaixo para continuar:
+      </p>
+
+      <a
+        href=3D"http://localhost:3000/definir-senha/Mlk3Dy3zNgU2mMS2r-aMQ=
+_yX0EDvvXJr0zuwMbXWBIk"
+        class=3D"inline-block bg-blue-600 hover:bg-blue-700 text-white fo=
+nt-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
+
+      <p class=3D"text-sm text-gray-500 mt-6">
+        Se voc=C3=AA n=C3=A3o solicitou este e-mail, pode simplesmente ig=
+nor=C3=A1-lo.
+      </p>
+    </div>
+  </body>
+</html>
+<!-- END app/views/usuario_mailer/definicao_senha_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [19b06471-986a-4847-b600-a8dcdeee1f24] Performed ActionMailer::MailDeliveryJob (Job ID: 19b06471-986a-4847-b600-a8dcdeee1f24) from Async(default) in 70.36ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [d00591a0-f669-4617-b878-9848a84e50a3] Performed ActionMailer::MailDeliveryJob (Job ID: d00591a0-f669-4617-b878-9848a84e50a3) from Async(default) in 88.6ms
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:55:30 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/editar_templates" for 127.0.0.1 at 2025-07-23 22:55:41 -0300
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:55:41 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/enviar_formularios" for 127.0.0.1 at 2025-07-23 22:56:22 -0300
+Processing by GerenciamentoController#enviar_formularios as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 22:56:22 -0300
+Processing by GerenciamentoController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:13:56 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | GC: 3.3ms)
+Completed 200 OK in 38ms (Views: 28.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/resultados" for 127.0.0.1 at 2025-07-23 23:14:01 -0300
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:14:01 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:23:02 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 10.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-23 23:23:12 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fdce75331c8 @tempfile=#<Tempfile:/tmp/RackMultipart20250723-36310-siiy2l.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de participantes
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:63:in 'block in Admin::ImportsController#import_participants'
+Importando estudante: Gabriel - gabrielrszica0800@gmail.com
+Criando ou encontrando estudante com email: gabrielrszica0800@gmail.com
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:86:in 'Admin::ImportsController#create_student'
+Enviando link de definição de senha para gabrielrszica0800@gmail.com
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 8e04e9be-02ed-4d97-b9e6-990947335751) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0cad3b80 @uri=#<URI::GID gid://camaar/User/465>>]}
+[ActiveJob] ↳ app/controllers/admin/imports_controller.rb:138:in 'Admin::ImportsController#enviar_email_definicao_senha'
+  [1m[36mUserSubject Load (0.1ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 465 AND "user_subjects"."subject_id" = 40 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:72:in 'block (2 levels) in Admin::ImportsController#import_participants'
+Importando docente: Janaina - exemplo@unb.br
+Criando ou encontrando professor com email: exemplo@unb.br
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:110:in 'Admin::ImportsController#create_professor'
+Enviando link de definição de senha para exemplo@unb.br
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fc070cdc-1ad6-4cc9-a35a-9151c466b860) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0ca25990 @uri=#<URI::GID gid://camaar/User/466>>]}
+[ActiveJob] ↳ app/controllers/admin/imports_controller.rb:138:in 'Admin::ImportsController#enviar_email_definicao_senha'
+  [1m[36mUserSubject Load (0.1ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 466 AND "user_subjects"."subject_id" = 40 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:78:in 'block in Admin::ImportsController#import_participants'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:14:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/importar_dados
+Completed 302 Found in 115ms (ActiveRecord: 2.6ms (5 queries, 0 cached) | GC: 4.6ms)
+
+
+Started GET "/importar_dados" for 127.0.0.1 at 2025-07-23 23:23:12 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 465 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751] Performing ActionMailer::MailDeliveryJob (Job ID: 8e04e9be-02ed-4d97-b9e6-990947335751) from Async(default) enqueued at 2025-07-24T02:23:12.573227817Z with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0c96f690 @uri=#<URI::GID gid://camaar/User/465>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751]   Rendering usuario_mailer/definicao_senha_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751]   Rendered usuario_mailer/definicao_senha_email.html.erb within layouts/mailer (Duration: 0.9ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751]   Rendered layout layouts/mailer.html.erb (Duration: 2.2ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 466 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751] UsuarioMailer#definicao_senha_email: processed outbound mail in 21.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860] Performing ActionMailer::MailDeliveryJob (Job ID: fc070cdc-1ad6-4cc9-a35a-9151c466b860) from Async(default) enqueued at 2025-07-24T02:23:12.597680973Z with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fdd0c993040 @uri=#<URI::GID gid://camaar/User/466>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860]   Rendering usuario_mailer/definicao_senha_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860]   Rendered usuario_mailer/definicao_senha_email.html.erb within layouts/mailer (Duration: 0.6ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860]   Rendered layout layouts/mailer.html.erb (Duration: 1.4ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860] UsuarioMailer#definicao_senha_email: processed outbound mail in 5.7ms
+Processing by GerenciamentoController#importar_dados as HTML
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860] Delivered mail 68819910a6981_8dd66e60793dd@localhost.mail (25.8ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751] Delivered mail 68819910a2b66_8dd660d079233@localhost.mail (43.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860] Date: Wed, 23 Jul 2025 23:23:12 -0300
+From: no-reply@suaapp.com
+To: exemplo@unb.br
+Message-ID: <68819910a6981_8dd66e60793dd@localhost.mail>
+Subject: Defina sua senha
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/usuario_mailer/definicao_senha_email.html.erb --=
+><!DOCTYPE html>
+<html lang=3D"pt-BR">
+  <head>
+    <meta charset=3D"UTF-8" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1.0" />
+    <title>Definir Senha</title>
+    <link href=3D"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/ta=
+ilwind.min.css" rel=3D"stylesheet" />
+  </head>
+  <body class=3D"bg-gray-100 flex items-center justify-center min-h-scree=
+n">
+    <div class=3D"bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-=
+center">
+      <h1 class=3D"text-2xl font-bold text-gray-800 mb-4">Ol=C3=A1, Janai=
+na!</h1>
+      =
+
+      <p class=3D"text-gray-600 mb-6">
+        Recebemos uma solicita=C3=A7=C3=A3o para definir sua senha. Cliqu=
+e no bot=C3=A3o abaixo para continuar:
+      </p>
+
+      <a
+        href=3D"http://localhost:3000/definir-senha/Mlk3Dy3zNgU2mMS2r-aMQ=
+_yX0EDvvXJr0zuwMbXWBIk"
+        class=3D"inline-block bg-blue-600 hover:bg-blue-700 text-white fo=
+nt-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
+
+      <p class=3D"text-sm text-gray-500 mt-6">
+        Se voc=C3=AA n=C3=A3o solicitou este e-mail, pode simplesmente ig=
+nor=C3=A1-lo.
+      </p>
+    </div>
+  </body>
+</html>
+<!-- END app/views/usuario_mailer/definicao_senha_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751] Date: Wed, 23 Jul 2025 23:23:12 -0300
+From: no-reply@suaapp.com
+To: gabrielrszica0800@gmail.com
+Message-ID: <68819910a2b66_8dd660d079233@localhost.mail>
+Subject: Defina sua senha
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/usuario_mailer/definicao_senha_email.html.erb --=
+><!DOCTYPE html>
+<html lang=3D"pt-BR">
+  <head>
+    <meta charset=3D"UTF-8" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1.0" />
+    <title>Definir Senha</title>
+    <link href=3D"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/ta=
+ilwind.min.css" rel=3D"stylesheet" />
+  </head>
+  <body class=3D"bg-gray-100 flex items-center justify-center min-h-scree=
+n">
+    <div class=3D"bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-=
+center">
+      <h1 class=3D"text-2xl font-bold text-gray-800 mb-4">Ol=C3=A1, Gabri=
+el!</h1>
+      =
+
+      <p class=3D"text-gray-600 mb-6">
+        Recebemos uma solicita=C3=A7=C3=A3o para definir sua senha. Cliqu=
+e no bot=C3=A3o abaixo para continuar:
+      </p>
+
+      <a
+        href=3D"http://localhost:3000/definir-senha/FKxPr2D9LIwzVkiW1ccTr=
+jflPqvYFqBqXm4wrQK6i18"
+        class=3D"inline-block bg-blue-600 hover:bg-blue-700 text-white fo=
+nt-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
+
+      <p class=3D"text-sm text-gray-500 mt-6">
+        Se voc=C3=AA n=C3=A3o solicitou este e-mail, pode simplesmente ig=
+nor=C3=A1-lo.
+      </p>
+    </div>
+  </body>
+</html>
+<!-- END app/views/usuario_mailer/definicao_senha_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc070cdc-1ad6-4cc9-a35a-9151c466b860] Performed ActionMailer::MailDeliveryJob (Job ID: fc070cdc-1ad6-4cc9-a35a-9151c466b860) from Async(default) in 66.93ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [8e04e9be-02ed-4d97-b9e6-990947335751] Performed ActionMailer::MailDeliveryJob (Job ID: 8e04e9be-02ed-4d97-b9e6-990947335751) from Async(default) in 94.79ms
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 29ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:23:12 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 14.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/editar_templates" for 127.0.0.1 at 2025-07-23 23:23:20 -0300
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:23:20 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/enviar_formularios" for 127.0.0.1 at 2025-07-23 23:23:21 -0300
+Processing by GerenciamentoController#enviar_formularios as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:23:21 -0300
+Processing by GerenciamentoController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/resultados" for 127.0.0.1 at 2025-07-23 23:23:22 -0300
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-23 23:23:22 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+

@@ -68,6 +68,7 @@ group :test do
   gem "cucumber-rails", require: false
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do
@@ -79,3 +80,4 @@ end
 gem "database_cleaner-active_record", "~> 2.2", group: :test
 
 gem "tailwindcss-rails", "~> 4.3"
+

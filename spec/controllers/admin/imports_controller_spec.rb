@@ -2,55 +2,46 @@ require 'rails_helper'
 
 RSpec.describe Admin::ImportsController, type: :controller do
   describe "POST #import_sigaa" do
-    context "com dados válidos" do
-      it "importa cursos e participantes com sucesso" do
-        # Mock de dados válidos
-        courses_data = [{
-          "code" => "CIC0097",
-          "name" => "BANCOS DE DADOS",
-          "class" => {
-            "classCode" => "TA",
-            "semester" => "2021.2",
-            "time" => "35T45"
+    let(:admin_user) { create(:user, role: :admin) }
+
+    before do
+      allow(controller).to receive(:authenticate_admin!).and_return(true)
+    end
+
+    context "com arquivo de turmas válido" do
+      let(:valid_course_json) do
+        [{
+          "code": "MAT0025",
+          "name": "CÁLCULO 1",
+          "class": {
+            "classCode": "A1",
+            "semester": "2022.2",
+            "time": "234M34"
           }
-        }]
-        
-        participants_data = [{
-          "code" => "CIC0097",
-          "classCode" => "TA",
-          "semester" => "2021.2",
-          "dicente" => [{
-            "nome" => "Ana Silva",
-            "curso" => "Engenharia",
-            "matricula" => "123",
-            "usuario" => "anasilva",
-            "formacao" => "graduando",
-            "email" => "ana@example.com"
-          }]
-        }]
-        
-        # Mock da leitura de arquivos
-        allow(File).to receive(:read).and_return(
-          courses_data.to_json, 
-          participants_data.to_json
-        )
-        
-        post :import_sigaa
-        
-        expect(response).to redirect_to(admin_dashboard_path)
-        
+        }].to_json
+      end
+
+      it "importa os cursos e redireciona corretamente" do
+        file = Tempfile.new("curso.json")
+        file.write(valid_course_json)
+        file.rewind
+
+        post :import_sigaa, params: { arquivo: Rack::Test::UploadedFile.new(file.path, "application/json") }
+
+        expect(response).to redirect_to(importar_dados_path)
       end
     end
 
-    context "com dados inválidos" do
-      it "falha com erro de sintaxe JSON" do
-        # Mock de erro na leitura do JSON
-        allow(File).to receive(:read).and_raise(JSON::ParserError.new("erro de sintaxe"))
-        
-        post :import_sigaa
-        
-        expect(response).to redirect_to(admin_dashboard_path)
-        expect(flash[:alert]).to match(/Erro na importação/)
+    context "com arquivo inválido" do
+      it "redireciona com alerta" do
+        file = Tempfile.new("invalido.json")
+        file.write("invalido")
+        file.rewind
+
+        post :import_sigaa, params: { arquivo: Rack::Test::UploadedFile.new(file.path, "application/json") }
+
+        expect(response).to redirect_to(gerenciamento_path)
+        expect(flash[:alert]).to be_present
       end
     end
   end

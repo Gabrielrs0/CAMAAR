@@ -13,16 +13,20 @@ def importar_dados
 end
 
   def editar_templates
-    session[:completed_steps] |= ['editar_templates']
+    session[:completed_steps] ||= []
+    session[:completed_steps] << 'editar_templates' unless session[:completed_steps].include?('editar_templates')
+
     redirect_to gerenciamento_path
   end
 
   def enviar_formularios
-    session[:completed_steps] |= ['enviar_formularios']
+    session[:completed_steps] ||= []
+    session[:completed_steps] << 'enviar_formularios' unless session[:completed_steps].include?('enviar_formularios')
     redirect_to gerenciamento_path
   end
 
   def resultados
+    #session[:completed_steps] ||= []
     session.delete(:completed_steps)
     logger.info ">>> Sessão resetada após resultados"
     redirect_to gerenciamento_path
