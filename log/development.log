@@ -25679,3 +25679,325 @@ Processing by GerenciamentoController#index as HTML
 Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 01:07:33 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 20.9ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | GC: 2.9ms)
+Completed 200 OK in 82ms (Views: 47.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.9ms)
+
+
+Started GET "/avaliacoes" for 127.0.0.1 at 2025-07-24 01:07:36 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | GC: 2.1ms)
+Completed 200 OK in 49ms (Views: 34.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.2ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 01:07:37 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 7.7ms | GC: 1.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 2.9ms)
+Completed 200 OK in 29ms (Views: 14.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.4ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:31:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 12.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | GC: 0.0ms)
+Completed 200 OK in 746ms (Views: 51.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 103.2ms)
+
+
+Started GET "/avaliacoes" for 127.0.0.1 at 2025-07-24 10:31:55 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 10.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:32:07 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fd452a94330 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-39783-h94izg.json>, @content_type="application/json", @original_filename="classes.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"classes.json\"\r\nContent-Type: application/json\r\n">}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/import_sigaa_service.rb:43: syntax errors found
+  [2m41 | [m    end
+  [2m42 | [m  end
+[1;31m> [m[2m43 | [mend
+  [2m   | [m   [1;31m^[m expected an `end` to close the `module` statement
+  [2m   | [m   [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/services/admin/import_sigaa_service.rb:43: syntax errors found
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-24 10:32:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:33:35 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/import_sigaa_service.rb:43: syntax errors found
+  [2m41 | [m    end
+  [2m42 | [m  end
+[1;31m> [m[2m43 | [mend
+  [2m   | [m   [1;31m^[m expected an `end` to close the `module` statement
+  [2m   | [m   [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/services/admin/import_sigaa_service.rb:43: syntax errors found
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:33:39 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 8.6ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | GC: 1.2ms)
+Completed 200 OK in 41ms (Views: 26.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:33:44 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fd433a57800 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-39783-tt55t8.json>, @content_type="application/json", @original_filename="classes.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"classes.json\"\r\nContent-Type: application/json\r\n">}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/import_sigaa_service.rb:43: syntax errors found
+  [2m41 | [m    end
+  [2m42 | [m  end
+[1;31m> [m[2m43 | [mend
+  [2m   | [m   [1;31m^[m expected an `end` to close the `module` statement
+  [2m   | [m   [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/services/admin/import_sigaa_service.rb:43: syntax errors found
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:35:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | GC: 0.0ms)
+Completed 200 OK in 358ms (Views: 30.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 49.7ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:35:21 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f54e34aea68 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-41597-9mylie.json>, @content_type="application/json", @original_filename="classes.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"classes.json\"\r\nContent-Type: application/json\r\n">}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:35:21 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 13.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:35:44 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f54e345a378 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-41597-boutdf.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:35:44 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:36:14 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 21.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | GC: 0.0ms)
+Completed 200 OK in 55ms (Views: 38.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:36:19 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f54e32e73b0 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-41597-wc10n3.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/import_participants_service.rb:55: syntax errors found
+  [2m53 | [m    end
+  [2m54 | [m  end
+[1;31m> [m[2m55 | [mend
+  [2m   | [m   [1;31m^[m expected an `end` to close the `module` statement
+  [2m   | [m   [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/services/admin/import_participants_service.rb:55: syntax errors found
+app/services/admin/import_sigaa_service.rb:27:in 'block in Admin::ImportSigaaService#call'
+app/services/admin/import_sigaa_service.rb:23:in 'Admin::ImportSigaaService#call'
+app/lib/callable.rb:9:in 'Callable::ClassMethods#call'
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:36:31 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 20.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:36:36 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f54e0d2b130 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-41597-a2q22t.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/import_sigaa_service.rb:42: syntax errors found
+  [2m40 | [m      JSON.parse(file.read)
+  [2m41 | [m    end
+[1;31m> [m[2m42 | [m  end
+  [2m   | [m     [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m43 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `module` statement
+):
+  
+app/services/admin/import_sigaa_service.rb:42: syntax errors found
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:37:41 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 13.9ms | GC: 8.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | GC: 14.8ms)
+Completed 200 OK in 54ms (Views: 35.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 14.8ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:37:46 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f54c3d008d0 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-41597-yxl0cm.json>, @content_type="application/json", @original_filename="classes.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"classes.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Importando curso: CIC0097 - BANCOS DE DADOS
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0097' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 38 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+Turma importada: TA - Semestre: 2021.2
+Importando curso: CIC0105 - ENGENHARIA DE SOFTWARE
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0105' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 39 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+Turma importada: TA - Semestre: 2021.2
+Importando curso: CIC0202 - PROGRAMAÇÃO CONCORRENTE
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0202' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 40 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+Turma importada: TA - Semestre: 2021.2
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/importar_dados
+Completed 302 Found in 304ms (ActiveRecord: 32.6ms (6 queries, 0 cached) | GC: 72.7ms)
+
+
+Started GET "/importar_dados" for 127.0.0.1 at 2025-07-24 10:37:47 -0300
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:37:47 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 9.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.8ms)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/editar_templates" for 127.0.0.1 at 2025-07-24 10:37:49 -0300
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:37:49 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.4ms)
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started POST "/enviar_formularios" for 127.0.0.1 at 2025-07-24 10:37:50 -0300
+Processing by GerenciamentoController#enviar_formularios as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:37:50 -0300
+Processing by GerenciamentoController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.9ms)
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/resultados" for 127.0.0.1 at 2025-07-24 10:37:50 -0300
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:37:50 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 9.1ms | GC: 3.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 3.3ms)
+Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.5ms)
+
+
+  [1m[35m (4.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Camaar'*/[0m
+  [1m[36mUser Delete All (6.3ms)[0m  [1m[31mDELETE FROM "users" /*application='Camaar'*/[0m
+  [1m[36mCourse Delete All (0.1ms)[0m  [1m[31mDELETE FROM "courses" /*application='Camaar'*/[0m
+  [1m[36mSubject Delete All (0.1ms)[0m  [1m[31mDELETE FROM "subjects" /*application='Camaar'*/[0m
+  [1m[36mUserSubject Delete All (0.2ms)[0m  [1m[31mDELETE FROM "user_subjects" /*application='Camaar'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = ON /*application='Camaar'*/[0m

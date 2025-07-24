@@ -4810,3 +4810,590 @@ Enviando link de definição de senha para ana@example.com
   [1m[36mSubject Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
   [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f95c0d96db0 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-113643-fgi756.json20250724-113643-8jj9oz>, @content_type="application/json", @original_filename="curso.json20250724-113643-8jj9oz", @headers="content-disposition: form-data; name=\"arquivo\"; filename=\"curso.json20250724-113643-8jj9oz\"\r\ncontent-type: application/json\r\ncontent-length: 103\r\n">}
+Iniciando importação de dados do SIGAA...
+Detectado JSON de turmas
+Importando curso: MAT0025 - CÁLCULO 1
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "MAT0025"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "MAT0025"], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = ? LIMIT ?[0m  [["name", "CÁLCULO 1"], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["code", "MAT0025"], ["name", "CÁLCULO 1"], ["created_at", "2025-07-24 03:41:32.434520"], ["updated_at", "2025-07-24 03:41:32.434520"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = ? AND "subjects"."class_name" = ? AND "subjects"."semester" = ? LIMIT ?[0m  [["course_id", 1], ["class_name", "A1"], ["semester", "2022.2"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["class_name", "A1"], ["schedule", "234M34"], ["semester", "2022.2"], ["course_id", 1], ["created_at", "2025-07-24 03:41:32.488196"], ["updated_at", "2025-07-24 03:41:32.488196"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Turma importada: A1 - Semestre: 2022.2
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/importar_dados
+Completed 302 Found in 83ms (ActiveRecord: 3.3ms (6 queries, 0 cached) | GC: 36.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f95c93e76d0 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-113643-e311c7.json20250724-113643-fsi1z8>, @content_type="application/json", @original_filename="invalido.json20250724-113643-fsi1z8", @headers="content-disposition: form-data; name=\"arquivo\"; filename=\"invalido.json20250724-113643-fsi1z8\"\r\ncontent-type: application/json\r\ncontent-length: 8\r\n">}
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 293ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 41.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#enviar_formularios as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kimberely.ernser"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 03:41:33.050908"], ["updated_at", "2025-07-24 03:41:33.050908"], ["username", "kimberely.ernser"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://test.host/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dustin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 03:41:33.268354"], ["updated_at", "2025-07-24 03:41:33.268354"], ["username", "dustin"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "[FILTERED]"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "dustin"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "hash_password" = ?, "updated_at" = ?, "password_defined_at" = ? WHERE "users"."id" = ?[0m  [["hash_password", "[FILTERED]"], ["updated_at", "2025-07-24 03:41:33.472286"], ["password_defined_at", "[FILTERED]"], ["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 205ms (ActiveRecord: 1.8ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "blake.runolfsson"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 03:41:33.686612"], ["updated_at", "2025-07-24 03:41:33.686612"], ["username", "blake.runolfsson"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "teste"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "prof"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Started GET "/avaliacoes/index" for 127.0.0.1 at 2025-07-24 00:41:33 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mCourse Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+Importando curso: CIC0097 - BANCOS DE DADOS
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CIC0097"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CIC0097"], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = ? LIMIT ?[0m  [["name", "BANCOS DE DADOS"], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["code", "CIC0097"], ["name", "BANCOS DE DADOS"], ["created_at", "2025-07-24 03:41:33.800969"], ["updated_at", "2025-07-24 03:41:33.800969"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = ? AND "subjects"."class_name" = ? AND "subjects"."semester" = ? LIMIT ?[0m  [["course_id", 1], ["class_name", "TA"], ["semester", "2021.2"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSubject Create (0.6ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["class_name", "TA"], ["schedule", "35T45"], ["semester", "2021.2"], ["course_id", 1], ["created_at", "2025-07-24 03:41:33.808425"], ["updated_at", "2025-07-24 03:41:33.808425"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Turma importada: TA - Semestre: 2021.2
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = ? AND "subjects"."class_name" = ? AND "subjects"."semester" = ? LIMIT ?[0m  [["code", "CIC0097"], ["class_name", "TA"], ["semester", "2021.2"], ["LIMIT", 1]]
+Importando estudante: Ana Silva - ana@example.com
+Criando ou encontrando estudante com email: ana@example.com
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ana.silva"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Ana Silva"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Ciência da Computação"], ["student_enrolment", "123456"], ["professor_departament", nil], ["created_at", "2025-07-24 03:41:34.022862"], ["updated_at", "2025-07-24 03:41:34.022862"], ["username", "ana.silva"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Enviando link de definição de senha para ana@example.com
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fa82bdd1-fc9d-4a2a-98c2-f4d464a6db1d) to Test(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007f95c018cdf8 @uri=#<URI::GID gid://camaar/User/1>>]}
+  [1m[36mUserSubject Load (0.3ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = ? AND "user_subjects"."subject_id" = ? LIMIT ?[0m  [["user_id", 1], ["subject_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["subject_id", 1], ["created_at", "2025-07-24 03:41:34.043122"], ["updated_at", "2025-07-24 03:41:34.043122"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mSubject Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 283ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 40.6ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#enviar_formularios as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "raleigh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 04:50:43.637919"], ["updated_at", "2025-07-24 04:50:43.637919"], ["username", "raleigh"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "luna"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 04:50:43.863059"], ["updated_at", "2025-07-24 04:50:43.863059"], ["username", "luna"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "nolan_schiller"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 04:50:44.060687"], ["updated_at", "2025-07-24 04:50:44.060687"], ["username", "nolan_schiller"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "teste"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "prof"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Started GET "/avaliacoes/index" for 127.0.0.1 at 2025-07-24 01:50:44 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 222ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 39.7ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#enviar_formularios as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "thea"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 04:55:33.715441"], ["updated_at", "2025-07-24 04:55:33.715441"], ["username", "thea"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "milissa"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 04:55:33.945645"], ["updated_at", "2025-07-24 04:55:33.945645"], ["username", "milissa"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "[FILTERED]"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "milissa"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "hash_password" = ?, "updated_at" = ?, "password_defined_at" = ? WHERE "users"."id" = ?[0m  [["hash_password", "[FILTERED]"], ["updated_at", "2025-07-24 04:55:34.140114"], ["password_defined_at", "[FILTERED]"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 195ms (ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "markus"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 04:55:34.345422"], ["updated_at", "2025-07-24 04:55:34.345422"], ["username", "markus"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "teste"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "prof"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Started GET "/avaliacoes/index" for 127.0.0.1 at 2025-07-24 01:55:34 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fb5ffb38118 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-149081-3yh28b.json20250724-149081-j5xj5m>, @content_type="application/json", @original_filename="curso.json20250724-149081-j5xj5m", @headers="content-disposition: form-data; name=\"arquivo\"; filename=\"curso.json20250724-149081-j5xj5m\"\r\ncontent-type: application/json\r\ncontent-length: 103\r\n">}
+Iniciando importação de dados do SIGAA...
+Importando curso: MAT0025 - CÁLCULO 1
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "MAT0025"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCourse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "MAT0025"], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = ? LIMIT ?[0m  [["name", "CÁLCULO 1"], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["code", "MAT0025"], ["name", "CÁLCULO 1"], ["created_at", "2025-07-24 05:05:07.107736"], ["updated_at", "2025-07-24 05:05:07.107736"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = ? AND "subjects"."class_name" = ? AND "subjects"."semester" = ? LIMIT ?[0m  [["course_id", 1], ["class_name", "A1"], ["semester", "2022.2"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["class_name", "A1"], ["schedule", "234M34"], ["semester", "2022.2"], ["course_id", 1], ["created_at", "2025-07-24 05:05:07.205448"], ["updated_at", "2025-07-24 05:05:07.205448"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Turma importada: A1 - Semestre: 2022.2
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/importar_dados
+Completed 302 Found in 142ms (ActiveRecord: 5.1ms (6 queries, 0 cached) | GC: 58.3ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007fb608155890 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-149081-bxmu3n.json20250724-149081-vzkwqw>, @content_type="application/json", @original_filename="invalido.json20250724-149081-vzkwqw", @headers="content-disposition: form-data; name=\"arquivo\"; filename=\"invalido.json20250724-149081-vzkwqw\"\r\ncontent-type: application/json\r\ncontent-length: 8\r\n">}
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 308ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 45.7ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#enviar_formularios as HTML
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://test.host/gerenciamento
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "margurite_leffler"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 05:05:07.802186"], ["updated_at", "2025-07-24 05:05:07.802186"], ["username", "margurite_leffler"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by SenhaDefinicaoController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "leigh"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 05:05:08.013120"], ["updated_at", "2025-07-24 05:05:08.013120"], ["username", "leigh"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "[FILTERED]"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "leigh"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "hash_password" = ?, "updated_at" = ?, "password_defined_at" = ? WHERE "users"."id" = ?[0m  [["hash_password", "[FILTERED]"], ["updated_at", "2025-07-24 05:05:08.219482"], ["password_defined_at", "[FILTERED]"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 205ms (ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "charley"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fulano Teste"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Engenharia"], ["student_enrolment", "20220001"], ["professor_departament", nil], ["created_at", "2025-07-24 05:05:08.423727"], ["updated_at", "2025-07-24 05:05:08.423727"], ["username", "charley"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by SenhaDefinicaoController#update as HTML
+  Parameters: {"password" => "[FILTERED]", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."password_token" = ? LIMIT ?[0m  [["password_token", "[FILTERED]"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering senha_definicao/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered senha_definicao/edit.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "teste"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "prof"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Started GET "/avaliacoes/index" for 127.0.0.1 at 2025-07-24 02:05:08 -0300
+Processing by AvaliacoesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering avaliacoes/index.html.erb within layouts/application
+  Rendered avaliacoes/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mSubject Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mCourse Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+Importando curso: CIC0097 - BANCOS DE DADOS
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CIC0097"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = ? LIMIT ?[0m  [["code", "CIC0097"], ["LIMIT", 1]]
+  [1m[36mCourse Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = ? LIMIT ?[0m  [["name", "BANCOS DE DADOS"], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["code", "CIC0097"], ["name", "BANCOS DE DADOS"], ["created_at", "2025-07-24 05:05:08.486819"], ["updated_at", "2025-07-24 05:05:08.486819"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = ? AND "subjects"."class_name" = ? AND "subjects"."semester" = ? LIMIT ?[0m  [["course_id", 1], ["class_name", "TA"], ["semester", "2021.2"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["class_name", "TA"], ["schedule", "35T45"], ["semester", "2021.2"], ["course_id", 1], ["created_at", "2025-07-24 05:05:08.489712"], ["updated_at", "2025-07-24 05:05:08.489712"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Turma importada: TA - Semestre: 2021.2
+Importando participantes para turma TA - Semestre 2021.2
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = ? AND "subjects"."class_name" = ? AND "subjects"."semester" = ? LIMIT ?[0m  [["code", "CIC0097"], ["class_name", "TA"], ["semester", "2021.2"], ["LIMIT", 1]]
+Importando estudante: Ana Silva - ana@example.com
+Criando ou encontrando student: ana@example.com
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ana.silva"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Ana Silva"], ["email", "[FILTERED]"], ["hash_password", "[FILTERED]"], ["role", 0], ["academic_background", 0], ["student_course", "Ciência da Computação"], ["student_enrolment", "123456"], ["professor_departament", nil], ["created_at", "2025-07-24 05:05:08.707257"], ["updated_at", "2025-07-24 05:05:08.707257"], ["username", "ana.silva"], ["password_defined_at", "[FILTERED]"], ["password_token", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Enviando link de definição de senha para ana@example.com
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 76d35829-9de0-4334-9d3e-cfd32b5806d5) to Test(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007fb5fdf1a8f0 @uri=#<URI::GID gid://camaar/User/1>>]}
+  [1m[36mUserSubject Load (0.4ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = ? AND "user_subjects"."subject_id" = ? LIMIT ?[0m  [["user_id", 1], ["subject_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUserSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["subject_id", 1], ["created_at", "2025-07-24 05:05:08.726458"], ["updated_at", "2025-07-24 05:05:08.726458"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mSubject Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

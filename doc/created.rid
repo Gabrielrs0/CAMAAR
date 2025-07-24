@@ -1,0 +1,12 @@
+Thu, 24 Jul 2025 10:23:50 -0300
+app/controllers/admin/imports_controller.rb	Thu, 24 Jul 2025 10:16:51 -0300
+app/controllers/senha_definicao_controller.rb	Thu, 24 Jul 2025 10:17:11 -0300
+app/controllers/gerenciamento_controller.rb	Thu, 24 Jul 2025 10:17:44 -0300
+app/services/admin/create_user_service.rb	Thu, 24 Jul 2025 10:22:19 -0300
+app/services/admin/define_password_service.rb	Thu, 24 Jul 2025 10:22:49 -0300
+app/services/admin/import_courses_service.rb	Thu, 24 Jul 2025 10:21:44 -0300
+app/services/admin/import_participants_service.rb	Thu, 24 Jul 2025 10:22:06 -0300
+app/services/admin/import_sigaa_service.rb	Thu, 24 Jul 2025 10:21:31 -0300
+app/services/admin/password_definition_mailer_service.rb	Thu, 24 Jul 2025 10:22:35 -0300
+app/models/course.rb	Thu, 24 Jul 2025 10:23:37 -0300
+app/models/subject.rb	Thu, 24 Jul 2025 10:23:14 -0300

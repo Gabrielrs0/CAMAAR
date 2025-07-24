@@ -62,6 +62,7 @@ group :development do
   gem "web-console"
   gem 'letter_opener'
   gem "spring"
+  gem 'rubycritic', require: false
 end
 
 group :test do
@@ -80,4 +81,6 @@ end
 gem "database_cleaner-active_record", "~> 2.2", group: :test
 
 gem "tailwindcss-rails", "~> 4.3"
+gem 'rdoc'
+
 
