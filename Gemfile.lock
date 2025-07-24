@@ -545,10 +545,12 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.2)
   rails-controller-testing
+  rdoc
   rspec-rails
   rubocop-rails-omakase
   rubycritic
   selenium-webdriver
+  simplecov
   solid_cable
   solid_cache
   solid_queue

@@ -48,7 +48,8 @@ gem "thruster", require: false
 #Gemas da sprint 3
 gem "rubycritic", require: false
 gem "flog" # Usada para identificar o score de cada método individualmente
-
+gem 'simplecov', require: false, group: :test
+gem 'rdoc'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

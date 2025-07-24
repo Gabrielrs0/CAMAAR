@@ -8,11 +8,15 @@ class ApplicationController < ActionController::Base
 
   private
   # Tenta encontrar um possível usuario com login feito e qual usuario
+  #
+  # @return [User, nil] instância do usuário logado ou nil
   def current_user
     @current_user ||= user.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   # Método booleano para verificar se existe um usuario com login feito
+  #
+  # @return [Boolean] true se houver usuário logado, false caso contrário
   def logged_in?
     !!current_user
   end
