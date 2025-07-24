@@ -26001,3 +26001,906 @@ Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 0.0ms (0 queries, 0 cach
   [1m[36mSubject Delete All (0.1ms)[0m  [1m[31mDELETE FROM "subjects" /*application='Camaar'*/[0m
   [1m[36mUserSubject Delete All (0.2ms)[0m  [1m[31mDELETE FROM "user_subjects" /*application='Camaar'*/[0m
   [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = ON /*application='Camaar'*/[0m
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:40:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 10.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | GC: 0.0ms)
+Completed 200 OK in 439ms (Views: 41.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 103.8ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:40:45 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f4785cae580 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-44829-xkt2ol.json>, @content_type="application/json", @original_filename="classes.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"classes.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Importando curso: CIC0097 - BANCOS DE DADOS
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0097' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = 'CIC0097' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = 'BANCOS DE DADOS' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES ('CIC0097', 'BANCOS DE DADOS', '2025-07-24 13:40:45.262938', '2025-07-24 13:40:45.262938') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Load (1.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 41 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Create (0.8ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES ('TA', '35T45', '2021.2', 41, '2025-07-24 13:40:45.358172', '2025-07-24 13:40:45.358172') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+Turma importada: TA - Semestre: 2021.2
+Importando curso: CIC0105 - ENGENHARIA DE SOFTWARE
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0105' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = 'CIC0105' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = 'ENGENHARIA DE SOFTWARE' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES ('CIC0105', 'ENGENHARIA DE SOFTWARE', '2025-07-24 13:40:45.397803', '2025-07-24 13:40:45.397803') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 42 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Create (2.4ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES ('TA', '35M12', '2021.2', 42, '2025-07-24 13:40:45.427187', '2025-07-24 13:40:45.427187') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+Turma importada: TA - Semestre: 2021.2
+Importando curso: CIC0202 - PROGRAMAÇÃO CONCORRENTE
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."code" = 'CIC0202' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."code" = 'CIC0202' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."name" = 'PROGRAMAÇÃO CONCORRENTE' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("code", "name", "created_at", "updated_at") VALUES ('CIC0202', 'PROGRAMAÇÃO CONCORRENTE', '2025-07-24 13:40:45.457816', '2025-07-24 13:40:45.457816') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:20:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."course_id" = 43 AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mSubject Create (1.6ms)[0m  [1m[32mINSERT INTO "subjects" ("class_name", "schedule", "semester", "course_id", "created_at", "updated_at") VALUES ('TA', '35M34', '2021.2', 43, '2025-07-24 13:40:45.469405', '2025-07-24 13:40:45.469405') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_courses_service.rb:23:in 'block in Admin::ImportCoursesService#call'
+Turma importada: TA - Semestre: 2021.2
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/importar_dados
+Completed 302 Found in 355ms (ActiveRecord: 49.1ms (18 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/importar_dados" for 127.0.0.1 at 2025-07-24 10:40:45 -0300
+Processing by GerenciamentoController#importar_dados as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:40:45 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:40:51 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f478589db80 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-44829-nk787m.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 73.8ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/import_participants_service.rb:55: syntax errors found
+  [2m53 | [m    end
+  [2m54 | [m  end
+[1;31m> [m[2m55 | [mend
+  [2m   | [m   [1;31m^[m expected an `end` to close the `module` statement
+  [2m   | [m   [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/services/admin/import_participants_service.rb:55: syntax errors found
+app/services/admin/import_sigaa_service.rb:27:in 'block in Admin::ImportSigaaService#call'
+app/services/admin/import_sigaa_service.rb:23:in 'Admin::ImportSigaaService#call'
+app/lib/callable.rb:9:in 'Callable::ClassMethods#call'
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:41:27 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 26.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:41:31 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f47859f1e50 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-44829-jrnszm.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 8.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/home/Gabriel/CAMAAR/app/services/admin/create_user_service.rb:48: syntax errors found
+  [2m46 | [m    end
+  [2m47 | [m  end
+[1;31m> [m[2m48 | [mend
+  [2m   | [m   [1;31m^[m expected an `end` to close the `module` statement
+  [2m   | [m   [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/services/admin/create_user_service.rb:48: syntax errors found
+app/services/admin/import_participants_service.rb:41:in 'block in Admin::ImportParticipantsService#import_students'
+app/services/admin/import_participants_service.rb:40:in 'Array#each'
+app/services/admin/import_participants_service.rb:40:in 'Admin::ImportParticipantsService#import_students'
+app/services/admin/import_participants_service.rb:31:in 'Admin::ImportParticipantsService#import_for_class'
+app/services/admin/import_participants_service.rb:17:in 'block in Admin::ImportParticipantsService#call'
+app/services/admin/import_participants_service.rb:17:in 'Array#each'
+app/services/admin/import_participants_service.rb:17:in 'Admin::ImportParticipantsService#call'
+app/lib/callable.rb:9:in 'Callable::ClassMethods#call'
+app/services/admin/import_sigaa_service.rb:27:in 'block in Admin::ImportSigaaService#call'
+app/services/admin/import_sigaa_service.rb:23:in 'Admin::ImportSigaaService#call'
+app/lib/callable.rb:9:in 'Callable::ClassMethods#call'
+app/controllers/admin/imports_controller.rb:11:in 'block in Admin::ImportsController#import_sigaa'
+app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:42:05 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 8.9ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 1.5ms)
+Completed 200 OK in 38ms (Views: 22.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:42:14 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f4767ae4380 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-44829-twk4j0.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '222005401' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Gabriel', 'gabrielrszica0800@gmail.com', '$2a$12$c8vNeRUEXQLkriwYaEssoe7GjjSsOOEtJ8UdyBEOLX7kNdbvsYZb.', 0, 0, 'ENGENHARIA DE COMPUTAÇÃO/FT', '222005401', NULL, '2025-07-24 13:42:15.268119', '2025-07-24 13:42:15.268119', '222005401', NULL, '-_rQyQUfcmop98LUmm5rFNOGJVCP74mfePOaGplcBZ4') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: ad945b85-51ed-446a-bd5a-d2e6a0bd310e) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007f47858bfde8 @uri=#<URI::GID gid://camaar/User/467>>]}
+[ActiveJob] ↳ app/services/admin/password_definition_mailer_service.rb:19:in 'Admin::PasswordDefinitionMailerService#call'
+  [1m[36mUserSubject Load (0.2ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 467 AND "user_subjects"."subject_id" = 43 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUserSubject Create (0.7ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (467, 43, '2025-07-24 13:42:15.460108', '2025-07-24 13:42:15.460108') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 621ms (ActiveRecord: 22.1ms (8 queries, 0 cached) | GC: 80.2ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ad945b85-51ed-446a-bd5a-d2e6a0bd310e]   [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 467 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ad945b85-51ed-446a-bd5a-d2e6a0bd310e] Error performing ActionMailer::MailDeliveryJob (Job ID: ad945b85-51ed-446a-bd5a-d2e6a0bd310e) from Async(default) in 19.72ms: ActiveJob::DeserializationError (Error while trying to deserialize arguments: Couldn't find User with 'id'=467):
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:428:in 'ActiveRecord::FinderMethods#raise_record_not_found_exception!'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:536:in 'ActiveRecord::FinderMethods#find_one'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:513:in 'ActiveRecord::FinderMethods#find_with_ids'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:100:in 'ActiveRecord::FinderMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/querying.rb:24:in 'ActiveRecord::Querying#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/core.rb:273:in 'ActiveRecord::Core::ClassMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:162:in 'GlobalID::Locator::BaseLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'block in GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'block in GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:1373:in 'ActiveRecord::Relation#_scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:548:in 'ActiveRecord::Relation#scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/scoping/default.rb:51:in 'ActiveRecord::Scoping::Default::ClassMethods#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:31:in 'GlobalID::Locator.locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:134:in 'ActiveJob::Arguments#deserialize_global_id'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:118:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'block in ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'block in ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'Hash#transform_values'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:122:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'block in ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:195:in 'ActiveJob::Core#deserialize_arguments'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:185:in 'ActiveJob::Core#deserialize_arguments_if_needed'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:49:in 'ActiveJob::Execution#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'block in ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in 'block in ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'block in ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:29:in 'block in ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:95:in 'block (4 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:77:in 'block in ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:91:in 'ActiveSupport::ExecutionWrapper.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:74:in 'ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:94:in 'block (3 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:27:in 'ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/queue_adapters/async_adapter.rb:70:in 'ActiveJob::QueueAdapters::AsyncAdapter::JobWrapper#perform'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in 'Concurrent::RubyThreadPoolExecutor::Worker#run_task'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in 'block (3 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+<internal:kernel>:168:in 'Kernel#loop'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in 'block (2 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'Kernel#catch'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'block in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:42:15 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 11.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:42:33 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f47662ee258 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-44829-95nvnf.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mSubject Load (1.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '222005401' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Gabriel', 'gabrielrszica0800@gmail.com', '$2a$12$e6XBfduC1tCbgwRSc1WcZe8sNmXfTNiKz7U8Vca.mU.vmXBy2YhCu', 0, 0, 'ENGENHARIA DE COMPUTAÇÃO/FT', '222005401', NULL, '2025-07-24 13:42:33.244989', '2025-07-24 13:42:33.244989', '222005401', NULL, 'PfjEMDGc7Cvw2F_c7UOS_CzuUJc0JL2pSd-EJdZkpOA') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 27f0ae6c-0c2a-4a47-a2a9-e8a557c597e4) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007f4767c42880 @uri=#<URI::GID gid://camaar/User/467>>]}
+[ActiveJob] ↳ app/services/admin/password_definition_mailer_service.rb:19:in 'Admin::PasswordDefinitionMailerService#call'
+  [1m[36mUserSubject Load (0.2ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 467 AND "user_subjects"."subject_id" = 43 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUserSubject Create (2.0ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (467, 43, '2025-07-24 13:42:33.281239', '2025-07-24 13:42:33.281239') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 290ms (ActiveRecord: 6.7ms (8 queries, 0 cached) | GC: 6.3ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27f0ae6c-0c2a-4a47-a2a9-e8a557c597e4]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 467 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27f0ae6c-0c2a-4a47-a2a9-e8a557c597e4] Error performing ActionMailer::MailDeliveryJob (Job ID: 27f0ae6c-0c2a-4a47-a2a9-e8a557c597e4) from Async(default) in 24.83ms: ActiveJob::DeserializationError (Error while trying to deserialize arguments: Couldn't find User with 'id'=467):
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:428:in 'ActiveRecord::FinderMethods#raise_record_not_found_exception!'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:536:in 'ActiveRecord::FinderMethods#find_one'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:513:in 'ActiveRecord::FinderMethods#find_with_ids'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:100:in 'ActiveRecord::FinderMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/querying.rb:24:in 'ActiveRecord::Querying#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/core.rb:273:in 'ActiveRecord::Core::ClassMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:162:in 'GlobalID::Locator::BaseLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'block in GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'block in GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:1373:in 'ActiveRecord::Relation#_scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:548:in 'ActiveRecord::Relation#scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/scoping/default.rb:51:in 'ActiveRecord::Scoping::Default::ClassMethods#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:31:in 'GlobalID::Locator.locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:134:in 'ActiveJob::Arguments#deserialize_global_id'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:118:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'block in ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'block in ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'Hash#transform_values'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:122:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'block in ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:195:in 'ActiveJob::Core#deserialize_arguments'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:185:in 'ActiveJob::Core#deserialize_arguments_if_needed'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:49:in 'ActiveJob::Execution#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'block in ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in 'block in ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'block in ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:29:in 'block in ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:95:in 'block (4 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:77:in 'block in ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:91:in 'ActiveSupport::ExecutionWrapper.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:74:in 'ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:94:in 'block (3 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:27:in 'ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/queue_adapters/async_adapter.rb:70:in 'ActiveJob::QueueAdapters::AsyncAdapter::JobWrapper#perform'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in 'Concurrent::RubyThreadPoolExecutor::Worker#run_task'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in 'block (3 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+<internal:kernel>:168:in 'Kernel#loop'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in 'block (2 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'Kernel#catch'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'block in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:42:33 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 8.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | GC: 0.0ms)
+Completed 200 OK in 430ms (Views: 40.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 100.3ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:08 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:09 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:09 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:09 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 14.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:10 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:10 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='Camaar'*/[0m
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:43:39 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f013fbfe748 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-46174-v9pxzs.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mSubject Load (0.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '222005401' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Gabriel', 'gabrielrszica0800@gmail.com', '$2a$12$DIHcRpc/Kicbguge9keWIORThdhyd1.HATch.szMy2FFa0GnxOOsG', 0, 0, 'ENGENHARIA DE COMPUTAÇÃO/FT', '222005401', NULL, '2025-07-24 13:43:40.150330', '2025-07-24 13:43:40.150330', '222005401', NULL, 'AuYrk6RUBMREcxsmX1S01uj2BNP1ByvXCbR_gvYzjh8') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: a5f26fd0-1c52-4f7c-aad5-387849948fa7) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007f013faeecb8 @uri=#<URI::GID gid://camaar/User/467>>]}
+[ActiveJob] ↳ app/services/admin/password_definition_mailer_service.rb:19:in 'Admin::PasswordDefinitionMailerService#call'
+  [1m[36mUserSubject Load (1.2ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 467 AND "user_subjects"."subject_id" = 43 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUserSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (467, 43, '2025-07-24 13:43:40.336133', '2025-07-24 13:43:40.336133') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 677ms (ActiveRecord: 29.4ms (8 queries, 0 cached) | GC: 67.0ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5f26fd0-1c52-4f7c-aad5-387849948fa7]   [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 467 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5f26fd0-1c52-4f7c-aad5-387849948fa7] Error performing ActionMailer::MailDeliveryJob (Job ID: a5f26fd0-1c52-4f7c-aad5-387849948fa7) from Async(default) in 13.72ms: ActiveJob::DeserializationError (Error while trying to deserialize arguments: Couldn't find User with 'id'=467):
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:428:in 'ActiveRecord::FinderMethods#raise_record_not_found_exception!'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:536:in 'ActiveRecord::FinderMethods#find_one'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:513:in 'ActiveRecord::FinderMethods#find_with_ids'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:100:in 'ActiveRecord::FinderMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/querying.rb:24:in 'ActiveRecord::Querying#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/core.rb:273:in 'ActiveRecord::Core::ClassMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:162:in 'GlobalID::Locator::BaseLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'block in GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'block in GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:1373:in 'ActiveRecord::Relation#_scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:548:in 'ActiveRecord::Relation#scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/scoping/default.rb:51:in 'ActiveRecord::Scoping::Default::ClassMethods#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:31:in 'GlobalID::Locator.locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:134:in 'ActiveJob::Arguments#deserialize_global_id'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:118:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'block in ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'block in ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'Hash#transform_values'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:122:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'block in ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:195:in 'ActiveJob::Core#deserialize_arguments'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:185:in 'ActiveJob::Core#deserialize_arguments_if_needed'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:49:in 'ActiveJob::Execution#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'block in ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in 'block in ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'block in ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:29:in 'block in ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:95:in 'block (4 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:77:in 'block in ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:91:in 'ActiveSupport::ExecutionWrapper.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:74:in 'ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:94:in 'block (3 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:27:in 'ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/queue_adapters/async_adapter.rb:70:in 'ActiveJob::QueueAdapters::AsyncAdapter::JobWrapper#perform'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in 'Concurrent::RubyThreadPoolExecutor::Worker#run_task'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in 'block (3 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+<internal:kernel>:168:in 'Kernel#loop'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in 'block (2 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'Kernel#catch'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'block in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:43:40 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 19.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:44:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Camaar'*/[0m
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 8.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 0.0ms)
+Completed 200 OK in 274ms (Views: 30.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 47.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:44:20 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f7e6953e5c8 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-46877-i45vae.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '222005401' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Gabriel', 'gabrielrszica0800@gmail.com', '$2a$12$Laz6DJatpmoeY/VdRdYvy.g3bhpajNVMMU/SY2.KuQwGGPiVhLhza', 0, 0, 'ENGENHARIA DE COMPUTAÇÃO/FT', '222005401', NULL, '2025-07-24 13:44:20.618869', '2025-07-24 13:44:20.618869', '222005401', NULL, 'knOW7sVMvbEH1GL3GeLVe8_VoXbwr4-aehXJjNai5Ok') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 30f3d6ae-3cf1-46ad-b08f-ecc5a53409e8) to Async(default) with arguments: "UsuarioMailer", "definicao_senha_email", "deliver_now", {args: [#<GlobalID:0x00007f7e6948e308 @uri=#<URI::GID gid://camaar/User/467>>]}
+[ActiveJob] ↳ app/services/admin/password_definition_mailer_service.rb:19:in 'Admin::PasswordDefinitionMailerService#call'
+  [1m[36mUserSubject Load (1.6ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 467 AND "user_subjects"."subject_id" = 43 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUserSubject Create (1.0ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (467, 43, '2025-07-24 13:44:20.875838', '2025-07-24 13:44:20.875838') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 735ms (ActiveRecord: 35.6ms (8 queries, 0 cached) | GC: 73.7ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [30f3d6ae-3cf1-46ad-b08f-ecc5a53409e8]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 467 LIMIT 1 /*application='Camaar'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [30f3d6ae-3cf1-46ad-b08f-ecc5a53409e8] Error performing ActionMailer::MailDeliveryJob (Job ID: 30f3d6ae-3cf1-46ad-b08f-ecc5a53409e8) from Async(default) in 12.94ms: ActiveJob::DeserializationError (Error while trying to deserialize arguments: Couldn't find User with 'id'=467):
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:428:in 'ActiveRecord::FinderMethods#raise_record_not_found_exception!'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:536:in 'ActiveRecord::FinderMethods#find_one'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:513:in 'ActiveRecord::FinderMethods#find_with_ids'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/finder_methods.rb:100:in 'ActiveRecord::FinderMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/querying.rb:24:in 'ActiveRecord::Querying#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/core.rb:273:in 'ActiveRecord::Core::ClassMethods#find'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:162:in 'GlobalID::Locator::BaseLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'block in GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'block in GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:1373:in 'ActiveRecord::Relation#_scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:548:in 'ActiveRecord::Relation#scoping'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/scoping/default.rb:51:in 'ActiveRecord::Scoping::Default::ClassMethods#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:220:in 'GlobalID::Locator::UnscopedLocator#unscoped'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:210:in 'GlobalID::Locator::UnscopedLocator#locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/globalid-1.2.1/lib/global_id/locator.rb:31:in 'GlobalID::Locator.locate'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:134:in 'ActiveJob::Arguments#deserialize_global_id'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:118:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'block in ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:115:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'block in ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'Hash#transform_values'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:148:in 'ActiveJob::Arguments#deserialize_hash'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:122:in 'ActiveJob::Arguments#deserialize_argument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'block in ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'Array#map'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/arguments.rb:43:in 'ActiveJob::Arguments#deserialize'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:195:in 'ActiveJob::Core#deserialize_arguments'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/core.rb:185:in 'ActiveJob::Core#deserialize_arguments_if_needed'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:49:in 'ActiveJob::Execution#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'block in ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:13:in 'block in ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/job_runtime.rb:11:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/instrumentation.rb:26:in 'ActiveJob::Instrumentation#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'block in ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/logging.rb:32:in 'ActiveJob::Logging#perform_now'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:29:in 'block in ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:95:in 'block (4 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:77:in 'block in ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/execution_wrapper.rb:91:in 'ActiveSupport::ExecutionWrapper.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:74:in 'ActiveSupport::Reloader.wrap'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/railtie.rb:94:in 'block (3 levels) in <class:Railtie>'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/execution.rb:27:in 'ActiveJob::Execution::ClassMethods#execute'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/activejob-8.0.2/lib/active_job/queue_adapters/async_adapter.rb:70:in 'ActiveJob::QueueAdapters::AsyncAdapter::JobWrapper#perform'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in 'Concurrent::RubyThreadPoolExecutor::Worker#run_task'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in 'block (3 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+<internal:kernel>:168:in 'Kernel#loop'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in 'block (2 levels) in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'Kernel#catch'
+/home/Gabriel/.local/share/mise/installs/ruby/3.4.4/lib/ruby/gems/3.4.0/gems/concurrent-ruby-1.3.5/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in 'block in Concurrent::RubyThreadPoolExecutor::Worker#create_worker'
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:44:20 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 11.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:45:57 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 10.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 30.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/admin/import/sigaa" for 127.0.0.1 at 2025-07-24 10:46:04 -0300
+Processing by Admin::ImportsController#import_sigaa as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "arquivo" => #<ActionDispatch::Http::UploadedFile:0x00007f7e691254c8 @tempfile=#<Tempfile:/tmp/RackMultipart20250724-46877-g5lvtl.json>, @content_type="application/json", @original_filename="class_members2.json", @headers="Content-Disposition: form-data; name=\"arquivo\"; filename=\"class_members2.json\"\r\nContent-Type: application/json\r\n">}
+Iniciando importação de dados do SIGAA...
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" INNER JOIN "courses" ON "courses"."id" = "subjects"."course_id" WHERE "courses"."code" = 'CIC0097' AND "subjects"."class_name" = 'TA' AND "subjects"."semester" = '2021.2' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:27:in 'Admin::ImportParticipantsService#import_for_class'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'gabrielrszica0800@gmail.com' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = '222005401' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "hash_password", "role", "academic_background", "student_course", "student_enrolment", "professor_departament", "created_at", "updated_at", "username", "password_defined_at", "password_token") VALUES ('Gabriel', 'gabrielrszica0800@gmail.com', '$2a$12$UA65AiY.uBpVAmXckvLffu2C5onYDt3tbSZ73prSqJp9Wo4w0wHjS', 0, 0, 'ENGENHARIA DE COMPUTAÇÃO/FT', '222005401', NULL, '2025-07-24 13:46:04.680015', '2025-07-24 13:46:04.680015', '222005401', NULL, 'p8ldPp2gK9TGG1UmLJXfLZyX0kLJwqwfJcu8rWq6TPY') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  Rendering layout layouts/mailer.html.erb
+  Rendering usuario_mailer/definicao_senha_email.html.erb within layouts/mailer
+  Rendered usuario_mailer/definicao_senha_email.html.erb within layouts/mailer (Duration: 12.5ms | GC: 0.0ms)
+  Rendered layout layouts/mailer.html.erb (Duration: 14.1ms | GC: 0.0ms)
+UsuarioMailer#definicao_senha_email: processed outbound mail in 30.2ms
+Delivered mail 6882391cb4090_b71d2b38328aa@localhost.mail (35.1ms)
+Date: Thu, 24 Jul 2025 10:46:04 -0300
+From: no-reply@suaapp.com
+To: gabrielrszica0800@gmail.com
+Message-ID: <6882391cb4090_b71d2b38328aa@localhost.mail>
+Subject: Defina sua senha
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/usuario_mailer/definicao_senha_email.html.erb --=
+><!DOCTYPE html>
+<html lang=3D"pt-BR">
+  <head>
+    <meta charset=3D"UTF-8" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1.0" />
+    <title>Definir Senha</title>
+    <link href=3D"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/ta=
+ilwind.min.css" rel=3D"stylesheet" />
+  </head>
+  <body class=3D"bg-gray-100 flex items-center justify-center min-h-scree=
+n">
+    <div class=3D"bg-white shadow-xl rounded-xl p-8 max-w-md w-full text-=
+center">
+      <h1 class=3D"text-2xl font-bold text-gray-800 mb-4">Ol=C3=A1, Gabri=
+el!</h1>
+      =
+
+      <p class=3D"text-gray-600 mb-6">
+        Recebemos uma solicita=C3=A7=C3=A3o para definir sua senha. Cliqu=
+e no bot=C3=A3o abaixo para continuar:
+      </p>
+
+      <a
+        href=3D"http://localhost:3000/definir-senha/p8ldPp2gK9TGG1UmLJXfL=
+ZyX0kLJwqwfJcu8rWq6TPY"
+        class=3D"inline-block bg-blue-600 hover:bg-blue-700 text-white fo=
+nt-semibold py-2 px-4 rounded-lg transition duration-200"
+      >
+        Definir minha senha
+      </a>
+
+      <p class=3D"text-sm text-gray-500 mt-6">
+        Se voc=C3=AA n=C3=A3o solicitou este e-mail, pode simplesmente ig=
+nor=C3=A1-lo.
+      </p>
+    </div>
+  </body>
+</html>
+<!-- END app/views/usuario_mailer/definicao_senha_email.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->=
+
+  [1m[36mUserSubject Load (0.2ms)[0m  [1m[34mSELECT "user_subjects".* FROM "user_subjects" WHERE "user_subjects"."user_id" = 467 AND "user_subjects"."subject_id" = 43 LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUserSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "user_subjects" ("user_id", "subject_id", "created_at", "updated_at") VALUES (467, 43, '2025-07-24 13:46:04.805966', '2025-07-24 13:46:04.805966') RETURNING "id" /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/import_participants_service.rb:42:in 'block in Admin::ImportParticipantsService#import_students'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'exemplo@unb.br' LIMIT 1 /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/services/admin/create_user_service.rb:20:in 'Admin::CreateUserService#call'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='import_sigaa',application='Camaar',controller='imports'*/[0m
+  ↳ app/controllers/admin/imports_controller.rb:10:in 'Admin::ImportsController#import_sigaa'
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 502ms (ActiveRecord: 14.7ms (8 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:46:04 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 12.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/editar_templates" for 127.0.0.1 at 2025-07-24 10:46:11 -0300
+Processing by GerenciamentoController#editar_templates as HTML
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 19ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:46:11 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:46:14 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/enviar_formularios" for 127.0.0.1 at 2025-07-24 10:46:16 -0300
+Processing by GerenciamentoController#enviar_formularios as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:46:16 -0300
+Processing by GerenciamentoController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 10.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/resultados" for 127.0.0.1 at 2025-07-24 10:46:17 -0300
+Processing by GerenciamentoController#resultados as HTML
+>>> Sessão resetada após resultados
+Redirected to http://127.0.0.1:3000/gerenciamento
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:46:17 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gerenciamento" for 127.0.0.1 at 2025-07-24 10:46:19 -0300
+Processing by GerenciamentoController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gerenciamento/index.html.erb within layouts/application
+  Rendered gerenciamento/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Camaar'*/[0m
+  [1m[36mUser Delete All (0.3ms)[0m  [1m[31mDELETE FROM "users" /*application='Camaar'*/[0m
+  [1m[36mCourse Delete All (0.3ms)[0m  [1m[31mDELETE FROM "courses" /*application='Camaar'*/[0m
+  [1m[36mSubject Delete All (0.3ms)[0m  [1m[31mDELETE FROM "subjects" /*application='Camaar'*/[0m
+  [1m[36mUserSubject Delete All (0.5ms)[0m  [1m[31mDELETE FROM "user_subjects" /*application='Camaar'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = ON /*application='Camaar'*/[0m

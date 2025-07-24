@@ -16,7 +16,7 @@ module Admin
     def call
       return if @user.password_defined_at
 
-      UsuarioMailer.definicao_senha_email(@user).deliver_later
+      UsuarioMailer.definicao_senha_email(@user).deliver_now
     end
   end
 end

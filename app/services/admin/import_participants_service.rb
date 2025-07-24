@@ -1,4 +1,4 @@
-module Admin
+
 # Namespace Admin: serviços administrativos do sistema
 # Service ImportParticipantsService: importa participantes (estudantes e professores) do JSON do SIGAA
 module Admin

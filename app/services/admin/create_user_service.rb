@@ -1,4 +1,4 @@
-module Admin
+
 # Namespace Admin: serviços administrativos do sistema
 # Service CreateUserService: cria ou encontra usuários, gera token e envia e-mail de definição de senha
 module Admin
