@@ -13,25 +13,17 @@ class SessionsController < ApplicationController
     #puts "-> password recebido: #{password.inspect}"
     
     #puts "-> sessao antes: #{session.to_hash.inspect}"
-    # tenta encontrar o usuario pelo email
-    user = User.find_by(email: identifier) ||
-          User.find_by(student_enrolment: identifier)
+    
+    user = find_user(identifier) # tenta encontrar o usuario pelo email ou matricula
 
     #puts "-> user encontrado: #{user.inspect}"
     
-    # Verifica se a senha é a mesma
-    valid = user && user.hash_password == password
-    #puts "-> senha valida? #{valid}"
-
+    valid = is_valid_login(user, password) # Verifica se a senha é a mesma
+    
     if valid
-      session[:user_id] = user.id
-      #puts "->session[:user_id] agr: #{session[:user_id]}"
-      flash[:sucess] = "Login realizado com sucesso !" # Faz login com sucesso
-      redirect_to root_path #VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+      sucess_login(user)
     else
-      # Falha ao realizar o login
-      flash.now[:alert] = "Email/matrícula ou senha inválidos"
-      render 'new', status: :unauthorized
+      failed_login
     end
 
   end
@@ -42,5 +34,31 @@ class SessionsController < ApplicationController
     flash[:info] = "Você saiu do sistema Camaar!"
     redirect_to login_path #VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
   end
-  
+
+  private
+
+   # tenta encontrar o usuario pelo email ou matricula
+  def find_user(identifier)
+    user = User.find_by(email: identifier) ||
+          User.find_by(student_enrolment: identifier)
+  end
+
+  # Verifica se a senha é a mesma
+  def is_valid_login (user, password)
+    valid = user && user.hash_password == password
+    #puts "-> senha valida? #{valid}"
+  end
+
+  def sucess_login (user)
+      session[:user_id] = user.id
+      #puts "->session[:user_id] agr: #{session[:user_id]}"
+      flash[:sucess] = "Login realizado com sucesso !" # Faz login com sucesso
+      redirect_to root_path #VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+  end
+
+  def failed_login
+    # Falha ao realizar o login
+    flash.now[:alert] = "Email/matrícula ou senha inválidos"
+    render 'new', status: :unauthorized
+  end
 end
