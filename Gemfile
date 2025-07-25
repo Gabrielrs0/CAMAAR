@@ -45,6 +45,12 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Gemas da sprint 3
+gem "rubycritic", require: false
+gem "flog" # Usada para identificar o score de cada método individualmente
+gem "simplecov", require: false, group: :test
+gem "rdoc"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -67,6 +73,10 @@ group :test do
   gem "cucumber-rails", require: false
   gem "capybara"
   gem "selenium-webdriver"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "rails-controller-testing"
 end
 
 gem "database_cleaner-active_record", "~> 2.2", group: :test
