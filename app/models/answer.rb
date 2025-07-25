@@ -1,54 +1,57 @@
+# Representa uma resposta de usuário a uma questão de um formulário.
+#
+# Validações:
+# 1️⃣ Permissão do usuário para responder (role vs. form.receiver_role)
+# 2️⃣ Pertinência da pergunta ao template do formulário
+# 3️⃣ Se o formulário está ativo
+# 4️⃣ Se o tipo de pergunta exige texto ou alternativa
 class Answer < ApplicationRecord
   belongs_to :form
   belongs_to :user
   belongs_to :question
 
-  # 1. Validação de PERMISSÃO (Executada primeiro)
-  # Garante que o usuário tem a permissão correta para o formulário.
-  validate :user_role_matches_form_role
-  validate :form_and_question_are_same_template
-  validate :form_must_be_active
+  # 1️⃣ Validações de permissão (só roda quando form e user existem)
+  validate :user_has_permission,     if: -> { user && form }
+  validate :question_in_template,    if: -> { form && question }
+  validate :form_must_be_active,     if: -> { form.present?   }
 
-  # 2. Validações de FORMATO (Executadas apenas se a permissão estiver OK)
-  # Usamos 'with_options' para agrupar e simplificar as condições.
+  # 2️⃣ Validações de formato (texto vs. alternativa)
   with_options if: -> { question&.alternative? } do
     validates :answer_alternative, presence: true
-    validates :answer_text, absence: true
+    validates :answer_text,        absence: true
   end
 
   with_options if: -> { question&.text? } do
-    validates :answer_text, presence: true
+    validates :answer_text,        presence: true
     validates :answer_alternative, absence: true
   end
 
   private
 
-  # Método de validação personalizado para a permissão
-  def user_role_matches_form_role
-    # Cláusulas de guarda para evitar erros se as associações não existirem
-    return if user.nil? || form.nil?
-
-    # Compara a permissão do usuário com a do formulário
-    if user.role != form.receiver_role
-      # Adiciona um erro geral ao objeto, não a um campo específico
-      errors.add(:base, "Você não tem permissão para responder este formulário.")
-    end
+  # Adiciona um erro genérico ao objeto
+  # @param message [String] texto da mensagem de erro
+  def add_base_error(message)
+    errors.add(:base, message)
   end
 
-  def form_and_question_are_same_template
-    return if form.nil? || question.nil?
+  # Garante que o usuário tenha a role correta para o formulário
+  def user_has_permission
+    return if user.role == form.receiver_role
 
-    if form.template_id != question.template_id
-      errors.add(:base, "Pergunta não existente no template")
-    end
+    add_base_error("Você não tem permissão para responder este formulário.")
   end
 
+  # Garante que a pergunta pertença ao mesmo template do formulário
+  def question_in_template
+    return if form.template_id == question.template_id
+
+    add_base_error("Pergunta não existente no template.")
+  end
+
+  # Garante que o formulário esteja ativo
   def form_must_be_active
-    return if form.nil?
+    return if form.active_status?
 
-    unless form.active_status?
-      # Adiciona o erro ao campo :form, pois o problema está no formulário associado.
-      errors.add(:form, "não está ativo e não pode receber novas respostas.")
-    end
+    errors.add(:form, "não está ativo e não pode receber novas respostas.")
   end
 end
