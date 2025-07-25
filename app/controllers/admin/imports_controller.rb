@@ -1,40 +1,36 @@
-# Namespace Admin: controllers administrativos do sistema
-# Controller ImportsController: inicia e gerencia a importação de dados do SIGAA
 module Admin
+  # Controller ImportsController
+  #
+  # Ponto de entrada HTTP para importação de dados do SIGAA.
+  # Recebe arquivo via POST e delega ao ImportSigaaService.
+  #
+  # @since 1.0.0
   class ImportsController < ApplicationController
-    # Inicia o fluxo de importação do arquivo JSON
-    # @param params[:arquivo] [ActionDispatch::Http::UploadedFile] Arquivo JSON enviado pelo formulário
-    # @return [void] Redireciona para a página de status de importação
-    # @note Faz transação no banco e chama services de importação
+    before_action :authenticate_admin!
+
+    # POST /admin/import/sigaa
+    #
+    # Inicia a importação delegando ao ImportSigaaService.
+    #
+    # @param params[:arquivo] [ActionDispatch::Http::UploadedFile] JSON de input
+    # @return [void] Redireciona para status ou para tela de erro
+    # @note Em caso de falha, captura qualquer exceção e exibe flash[:alert]
     def import_sigaa
-      ActiveRecord::Base.transaction do
-        Admin::ImportSigaaService.call(params[:arquivo])
-      end
+      Admin::ImportSigaaService.call(params[:arquivo])
       redirect_to importar_dados_path, notice: 'Importação concluída com sucesso.'
-    rescue => error
-      redirect_to gerenciamento_path, alert: "Erro na importação: #{error.message}"
+    rescue StandardError => e
+      Rails.logger.error "[ImportSIGAA ERROR] #{e.class}: #{e.message}\n#{e.backtrace.join("\n")}"
+      redirect_to gerenciamento_path, alert: "Erro na importação: #{e.message}"
     end
 
     private
 
-    # Stub para autenticação de administrador nos testes
-    # @return [Boolean] Retorna sempre true para permitir stub nos specs
+    # Stub de autenticação de administrador para permitir
+    # testes controller sem precisar de lógica real.
+    #
+    # @return [Boolean] sempre true
     def authenticate_admin!
       true
-    end
-
-    # Encapsula chamada ao service de importação de cursos (para compatibilidade com specs antigos)
-    # @param data [Array<Hash>] Dados de cursos a serem importados
-    # @return [void]
-    def import_courses(data)
-      Admin::ImportCoursesService.call(data)
-    end
-
-    # Encapsula chamada ao service de importação de participantes (para compatibilidade com specs antigos)
-    # @param data [Array<Hash>] Dados de participantes a serem importados
-    # @return [void]
-    def import_participants(data)
-      Admin::ImportParticipantsService.call(data)
     end
   end
 end

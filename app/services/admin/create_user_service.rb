@@ -41,7 +41,7 @@ module Admin
         user.student_course    = @attrs['curso']
         user.student_enrolment = @attrs['matricula']
       else
-        user.professor_department = @attrs['departamento']
+        user.professor_departament = @attrs['departamento']
       end
     end
   end

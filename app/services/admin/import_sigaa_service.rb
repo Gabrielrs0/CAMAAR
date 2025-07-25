@@ -1,41 +1,55 @@
-
-# Namespace Admin: serviços administrativos do sistema
-# Service ImportSigaaService: coordena importação de dados do SIGAA (cursos e participantes)
 module Admin
+  # Service ImportSigaaService
+  #
+  # Coordena a importação, item a item, de um JSON do SIGAA,
+  # delegando cada registro para ImportCoursesService ou
+  # ImportParticipantsService conforme seu formato.
+  #
+  # @example
+  #   Admin::ImportSigaaService.call(params[:arquivo])
+  #
+  # @since 1.0.0
   class ImportSigaaService
     include Callable
 
     # Inicializa o serviço de importação SIGAA.
-    # @param uploaded_file [ActionDispatch::Http::UploadedFile] Arquivo JSON de input
-    # @return [void] Dispara transação e encaminha para serviços específicos
-    # @raise [RuntimeError] Quando o formato do JSON é desconhecido
-    # @note Faz parse do JSON e delega para ImportCoursesService ou ImportParticipantsService
+    #
+    # @param uploaded_file [ActionDispatch::Http::UploadedFile] Arquivo JSON enviado via formulário
     def initialize(uploaded_file)
       @uploaded_file = uploaded_file
     end
 
     # Executa o fluxo de importação de dados.
+    #
+    # Percorre cada entrada do JSON, verifica se é curso ou
+    # participante e chama o service correspondente.
+    #
     # @return [void]
+    # @raise [RuntimeError] Se encontrar um item com formato desconhecido
     def call
-      data = parse_json(@uploaded_file)
-      Rails.logger.info("Iniciando importação de dados do SIGAA...")
+      entries = parse_json(@uploaded_file)
+      Rails.logger.info "Iniciando importação de dados do SIGAA..."
 
       ActiveRecord::Base.transaction do
-        if data.first.key?('class') && data.first.key?('code')
-          Admin::ImportCoursesService.call(data)
-        elsif data.first.key?('dicente') && data.first.key?('code')
-          Admin::ImportParticipantsService.call(data)
-        else
-          raise "Formato de arquivo não reconhecido."
+        entries.each do |entry|
+          if entry.key?('class') && entry.key?('code')
+            Admin::ImportCoursesService.call([entry])
+          elsif entry.key?('dicente') && entry.key?('code')
+            Admin::ImportParticipantsService.call([entry])
+          else
+            raise "Formato de item não reconhecido: #{entry.inspect}"
+          end
         end
       end
     end
 
     private
 
-    # Faz o parse do conteúdo do arquivo para JSON.
+    # Lê todo o conteúdo do arquivo e faz parse para Array de Hashes.
+    #
     # @param file [ActionDispatch::Http::UploadedFile]
-    # @return [Array<Hash>] Array de hashes representando o JSON
+    # @return [Array<Hash>] Representação Ruby do JSON
+    # @raise [JSON::ParserError] Se o JSON estiver mal formado
     def parse_json(file)
       JSON.parse(file.read)
     end

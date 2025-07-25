@@ -13,49 +13,53 @@
     </div>
   </aside>
 
-
   <!-- Conteúdo principal -->
-<div class="flex-1 flex flex-col ml-0">
-  <!-- Topbar -->
-  <header class="flex items-center justify-between px-6 py-4 border-b bg-white z-50 relative">
-    <div class="flex items-center space-x-4">
-      <!-- Botão hamburguer -->
-      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-gray-800 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-      <h1 class="text-lg font-medium">Gerenciamento</h1>
-    </div>
-
-    <!-- Campo de pesquisa com ícone de lupa -->
-    <div class="flex items-center space-x-4">
-      <div class="relative">
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/>
+  <div class="flex-1 flex flex-col ml-0">
+    <!-- Topbar -->
+    <header class="flex items-center justify-between px-6 py-4 border-b bg-white z-50 relative">
+      <div class="flex items-center space-x-4">
+        <!-- Botão hambúrguer -->
+        <button onclick="toggleSidebar()" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
-        </div>
-        <input
-          type="text"
-          placeholder="Pesquisar..."
-          class="pl-10 pr-4 py-1 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-        />
+        </button>
+        <h1 class="text-lg font-medium">Gerenciamento</h1>
       </div>
 
-      <div class="bg-purple-700 text-white w-8 h-8 rounded-full flex items-center justify-center">U</div>
-    </div>
-  </header>
+      <!-- Campo de pesquisa -->
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/>
+            </svg>
+          </div>
+          <input
+            type="text"
+            placeholder="Pesquisar..."
+            class="pl-10 pr-4 py-1 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
 
-
+        <div class="bg-purple-700 text-white w-8 h-8 rounded-full flex items-center justify-center">U</div>
+      </div>
+    </header>
 
     <!-- Corpo da página -->
     <div class="flex-1 flex items-center justify-center bg-gray-200">
       <div class="bg-white p-16 rounded-lg shadow space-y-3 w-[36rem] h-[48rem] flex flex-col justify-center">
-        <%= form_with url: admin_import_sigaa_path, method: :post, local: true, multipart: true do |form| %>
+        <%= form_with url: admin_import_sigaa_path,
+                      method: :post,
+                      local: true,
+                      multipart: true,
+                      data: { turbo: false } do |form| %>
           <%= form.file_field :arquivo, id: "fileInput", style: "display: none;" %>
-
-          <button type="button" id="importButton" class="text-white text-2xl w-full py-4 px-4 rounded hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed bg-green-600">
+          <button
+            type="button"
+            id="importButton"
+            class="text-white text-2xl w-full py-4 px-4 rounded hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed bg-green-600"
+          >
             Importar dados
           </button>
         <% end %>
@@ -87,51 +91,46 @@
   function toggleSidebar(force = null) {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
-
     const isClosed = sidebar.classList.contains("-translate-x-full");
     const shouldOpen = force !== null ? force : isClosed;
-
-    if (shouldOpen) {
-      sidebar.classList.remove("-translate-x-full");
-      overlay.classList.remove("hidden");
-    } else {
-      sidebar.classList.add("-translate-x-full");
-      overlay.classList.add("hidden");
-    }
+    sidebar.classList.toggle("-translate-x-full", !shouldOpen);
+    overlay?.classList.toggle("hidden", shouldOpen);
   }
 
   function selecionarItem(item) {
-    const avaliacao = document.getElementById("item-avaliacoes");
+    const avaliacao   = document.getElementById("item-avaliacoes");
     const gerenciamento = document.getElementById("item-gerenciamento");
-
     if (item === 'avaliacoes') {
-      // Deixa o menu lateral aberto, e redireciona
       window.location.href = "/avaliacoes";
       return;
     }
-
-    // Mantém visuais do item ativo
-    gerenciamento.classList.add("bg-purple-900", "text-white");
+    gerenciamento.classList.add("bg-purple-900","text-white");
     gerenciamento.classList.remove("text-gray-600");
-    avaliacao.classList.remove("bg-purple-900", "text-white");
+    avaliacao.classList.remove("bg-purple-900","text-white");
     avaliacao.classList.add("text-gray-600");
-
-    // Mantém o menu aberto (não fecha)
-    // toggleSidebar(false); 
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function setupImportListener() {
     const importButton = document.getElementById("importButton");
-    const fileInput = document.getElementById("fileInput");
+    const fileInput    = document.getElementById("fileInput");
+    if (!importButton || !fileInput) return;
 
-    if (importButton && fileInput) {
-      importButton.addEventListener("click", function () {
-        fileInput.click();
-      });
+    // Evita bind duplicado
+    importButton.replaceWith(importButton.cloneNode(true));
+    fileInput.replaceWith(fileInput.cloneNode(true));
 
-      fileInput.addEventListener("change", function () {
-        this.form.submit();
-      });
-    }
-  });
+    const btn = document.getElementById("importButton");
+    const inp = document.getElementById("fileInput");
+
+    btn.addEventListener("click", () => inp.click());
+    inp.addEventListener("change", function () {
+      this.form.submit();
+      // limpa valor para permitir re‑envio do mesmo arquivo
+      this.value = "";
+    });
+  }
+
+  // Roda tanto no carregamento normal quanto em navegação via Turbo
+  document.addEventListener("DOMContentLoaded", setupImportListener);
+  document.addEventListener("turbo:load",      setupImportListener);
 </script>
