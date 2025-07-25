@@ -3,7 +3,7 @@
 #
 # Um usuário pode ser estudante ou professor, possui diversas associações e validações
 # conforme seu perfil. Essa classe inclui enumerações para cargo e formação acadêmica,
-# além de regras de consistência para os dados 
+# além de regras de consistência para os dados
 # @example professor não possui matrícula, logo
 #   student_enrolment, absence: true
 class User < ApplicationRecord
@@ -48,7 +48,7 @@ class User < ApplicationRecord
   # Garante que o email e o usuário sejam únicos
   validates :email, :username, uniqueness: true
 
-  # Valida que o campo do professor está vazio se o usuário for um aluno, 
+  # Valida que o campo do professor está vazio se o usuário for um aluno,
   # e que o campos relacionados ao discente não estejam vazios
   validates :professor_departament, absence: true, if: :student?
   validates :student_course, :student_enrolment, presence: true, if: :student?

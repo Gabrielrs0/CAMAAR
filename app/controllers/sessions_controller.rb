@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  
   # Renderiza a tela de login do usuário.
   #
   # @return [void]
@@ -15,23 +14,14 @@ class SessionsController < ApplicationController
   def create
     identifier = params[:session][:identifier]
     password = params[:session][:password]
-
-    #puts "-> identifier recebido: #{identifier.inspect}"
-    #puts "-> password recebido: #{password.inspect}"
-    #puts "-> sessao antes: #{session.to_hash.inspect}"
-    
     user = find_user(identifier)
-
-    #puts "-> user encontrado: #{user.inspect}"
-    
     valid = is_valid_login(user, password)
-    
+
     if valid
       sucess_login(user)
     else
       failed_login
     end
-
   end
 
   # Encerra a sessão do usuário ao realizar o logout.
@@ -42,13 +32,13 @@ class SessionsController < ApplicationController
     # Sai da conta acessada e retorna para a pagina de login
     session.delete(:user_id)
     flash[:info] = "Você saiu do sistema Camaar!"
-    redirect_to login_path #VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+    redirect_to login_path # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
   end
 
   private
-  
+
   # Tenta encontrar o usuário pelo identificador fornecido (email ou matrícula)
-  # 
+  #
   # @param identifier [String] identificador usado para autenticação
   # @return [User, nil] retorna ou o usuário encontrado ou nil
   def find_user(identifier)
@@ -63,7 +53,6 @@ class SessionsController < ApplicationController
   # @return [Boolean] true se a senha for correta, false caso contrário
   def is_valid_login (user, password)
     valid = user && user.hash_password == password
-    #puts "-> senha valida? #{valid}"
   end
 
   # Realiza as ações de login bem-sucedido.
@@ -73,9 +62,8 @@ class SessionsController < ApplicationController
   # @note cria sessão, define flash de sucesso e redireciona
   def sucess_login (user)
       session[:user_id] = user.id
-      #puts "->session[:user_id] agr: #{session[:user_id]}"
       flash[:sucess] = "Login realizado com sucesso !" # Faz login com sucesso
-      redirect_to root_path #VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+      redirect_to root_path # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
   end
 
   # Exibe uma mensagem de erro e renderiza a tela de login.
@@ -85,6 +73,6 @@ class SessionsController < ApplicationController
   def failed_login
     # Falha ao realizar o login
     flash.now[:alert] = "Email/matrícula ou senha inválidos"
-    render 'new', status: :unauthorized
+    render "new", status: :unauthorized
   end
 end
