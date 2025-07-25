@@ -11620,6 +11620,7 @@ Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms (2 queries, 0 cached
   [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'courses';[0m
   [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
   [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+<<<<<<< HEAD
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
@@ -12013,3 +12014,5 @@ Redirected to http://www.example.com/
 Filter chain halted as :authenticate_admin! rendered or redirected
 Completed 302 Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+=======
+>>>>>>> fa8b901 (merge parte weldo)
