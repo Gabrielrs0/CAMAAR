@@ -11,4 +11,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+
+  # Rotas de login e logout
+  get "/login", to: "sessions#new", as: :login
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy", as: :logout
+
+  root to: "sessions#new" # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+
+
+  # root 'pages#login'
 end
