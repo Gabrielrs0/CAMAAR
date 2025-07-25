@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy", as: :logout
 
-  root to: "sessions#new" # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+  # root to: "sessions#new" # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
 
 
   # root 'pages#login'
