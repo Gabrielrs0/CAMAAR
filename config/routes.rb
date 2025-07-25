@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # Root dentro do bloco:
   root "home#index"
 
-<<<<<<< HEAD
   # ===============================================================
   # ## Bloco de código para a rota de teste ##
   # Este bloco estava faltando. Ele cria a rota de login para testes.
@@ -22,7 +21,6 @@ Rails.application.routes.draw do
     end
   end
   # ===============================================================
-=======
   # Defines the root path route ("/")
   # root "posts#index"
 
@@ -36,5 +34,4 @@ Rails.application.routes.draw do
 
 
   # root 'pages#login'
->>>>>>> develop
 end
