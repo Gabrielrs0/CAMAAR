@@ -12,7 +12,7 @@ class User < ApplicationRecord
   # @example verifica se o usuário é professor
   #   user.professor?
   enum :role, {
-    student: 0,
+    aluno: 0,
     professor: 1
   }
 

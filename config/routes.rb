@@ -1,14 +1,26 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resources :forms, only: [ :index, :show ] do
+      member do
+        get :report
+      end
+    end
+  end
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  # Root dentro do bloco:
+  root "home#index"
 
+  # ===============================================================
+  # ## Bloco de código para a rota de teste ##
+  # Este bloco estava faltando. Ele cria a rota de login para testes.
+  if Rails.env.test?
+    namespace :test do
+      get "login/:admin_id", to: "sessions#create", as: "test_login"
+    end
+  end
+  # ===============================================================
   # Defines the root path route ("/")
   # root "posts#index"
 
@@ -18,7 +30,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy", as: :logout
 
-  root to: "sessions#new" # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+  # root to: "sessions#new" # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
 
 
   # root 'pages#login'

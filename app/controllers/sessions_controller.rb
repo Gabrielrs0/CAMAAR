@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
     # Sai da conta acessada e retorna para a pagina de login
     session.delete(:user_id)
     flash[:info] = "Você saiu do sistema Camaar!"
-    redirect_to login_path # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+    # redirect_to login_path # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
   end
 
   private
@@ -63,7 +63,7 @@ class SessionsController < ApplicationController
   def sucess_login (user)
       session[:user_id] = user.id
       flash[:sucess] = "Login realizado com sucesso !" # Faz login com sucesso
-      redirect_to root_path # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
+    # redirect_to root_path # VEFICAR SE ESTA ENCAMINHANDO PRO LUGAR CERTO
   end
 
   # Exibe uma mensagem de erro e renderiza a tela de login.

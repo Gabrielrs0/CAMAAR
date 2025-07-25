@@ -1,0 +1,43 @@
+<div style="font-family: sans-serif; padding: 2rem;">
+  
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 1rem;">
+    <div>
+      <h1>Resultados do Formulário</h1>
+      <p style="color: #555;">
+        <strong>Disciplina:</strong> <%= @form.subject.class_name %><br>
+        <strong>Modelo:</strong> <%= @form.template.title %>
+      </p>
+    </div>
+    <div>
+      <%= link_to 'Exportar CSV', report_admin_form_path(@form, format: :csv), class: 'btn-primary' %>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <h2>Respostas Recebidas</h2>
+
+    <% if @form.answers.any? %>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+          <tr style="background-color: #f2f2f2;">
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Aluno</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Pergunta</th>
+            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Resposta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @answers.each do |answer| %>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;"><%= answer.user.name %></td>
+              <td style="padding: 8px; border: 1px solid #ddd;"><%= answer.question.content %></td>
+              <td style="padding: 8px; border: 1px solid #ddd;"><%= answer.answer_text %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p style="margin-top: 1rem; color: #777;">Nenhuma resposta para este formulário ainda.</p>
+    <% end %>
+  </div>
+
+</div>
